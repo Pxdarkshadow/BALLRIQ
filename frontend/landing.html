@@ -1,0 +1,241 @@
+<title>BALLRIQ — Multilingual Cricket Intelligence Platform</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root {
+    --bg: #090d16;
+    --surface: #0f172a;
+    --surface-hover: #1e293b;
+    --border: #334155;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --blue: #3b82f6;
+    --blue-glow: rgba(59, 130, 246, 0.3);
+    --emerald: #10b981;
+    --purple: #a855f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: max(20px, env(safe-area-inset-top)) 16px max(40px, env(safe-area-inset-bottom));
+  }
+  .container { max-width: 1000px; margin: 0 auto; }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 60px 0 40px;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .logo-icon {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--blue), #6366f1, var(--emerald));
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 22px; color: #fff;
+    box-shadow: 0 8px 32px var(--blue-glow);
+  }
+  h1 {
+    font-size: 48px; font-weight: 800; letter-spacing: -1px;
+    background: linear-gradient(135deg, #fff 0%, var(--blue) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+  }
+  .tagline {
+    font-size: 20px; color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+  .stack-badges {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+    margin-bottom: 40px;
+  }
+  .badge {
+    padding: 6px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+  }
+
+  /* Features */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 40px 0;
+  }
+  .feature {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .feature:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .feature-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+  .feature-icon.bda { background: rgba(16, 185, 129, 0.15); }
+  .feature-icon.nlp { background: rgba(168, 85, 247, 0.15); }
+  .feature-icon.ir { background: rgba(59, 130, 246, 0.15); }
+  .feature-icon.rag { background: rgba(236, 72, 153, 0.15); }
+  .feature h3 {
+    font-size: 18px; font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .feature p { font-size: 14px; color: var(--text-muted); }
+
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 40px 0;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 32px; font-weight: 800; font-family: 'JetBrains Mono', monospace;
+  }
+  .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .stat:nth-child(1) .stat-value { color: var(--blue); }
+  .stat:nth-child(2) .stat-value { color: var(--emerald); }
+  .stat:nth-child(3) .stat-value { color: var(--purple); }
+  .stat:nth-child(4) .stat-value { color: #f59e0b; }
+
+  /* Tech Stack */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 40px 0;
+  }
+  .tech-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .tech-item .check { color: var(--emerald); font-weight: bold; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  footer p { font-size: 13px; color: var(--text-muted); }
+  footer a { color: var(--blue); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 32px; }
+    .tagline { font-size: 16px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+
+<div class="container">
+  <header class="hero">
+    <div class="logo">
+      <div class="logo-icon">CB</div>
+    </div>
+    <h1>BALLRIQ</h1>
+    <p class="tagline">Multilingual Cricket Intelligence & Big Data Analytics Platform</p>
+    <div class="stack-badges">
+      <span class="badge">Big Data (BDA)</span>
+      <span class="badge">NLP Pipeline</span>
+      <span class="badge">Information Retrieval</span>
+      <span class="badge">Hybrid RAG</span>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="stat">
+      <div class="stat-value">13,423</div>
+      <div class="stat-label">Commentary Records</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">3</div>
+      <div class="stat-label">Languages (Hi/Mr/En)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">50</div>
+      <div class="stat-label">Cricket Matches</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">15K+</div>
+      <div class="stat-label">IR Documents</div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon bda">📊</div>
+      <h3>Big Data Analytics</h3>
+      <p>Apache Parquet Lakehouse + DuckDB OLAP Engine for sub-millisecond queries across cricket data. Streaming analytics simulation with sliding-window momentum.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon nlp">🔤</div>
+      <h3>NLP Pipeline</h3>
+      <p>Full multilingual preprocessing: Unicode normalization, language detection, cricket vocabulary normalization, player alias resolution, event classification.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon ir">🔍</div>
+      <h3>Information Retrieval</h3>
+      <p>TF-IDF, BM25 Okapi, Semantic Vector Search (XLM-R embeddings), and Hybrid Fusion for cross-lingual Hindi/Marathi cricket queries.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon rag">🤖</div>
+      <h3>Grounded RAG QA</h3>
+      <p>Retrieval-Augmented Generation with source citations. Ask natural language questions in Hindi, Marathi, or English about matches, players, and events.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="font-size: 20px; margin-bottom: 16px;">Built With</h2>
+    <div class="tech-grid">
+      <div class="tech-item"><span class="check">✓</span> FastAPI Backend</div>
+      <div class="tech-item"><span class="check">✓</span> React + Vite Frontend</div>
+      <div class="tech-item"><span class="check">✓</span> DuckDB OLAP Engine</div>
+      <div class="tech-item"><span class="check">✓</span> Apache Parquet Lake</div>
+      <div class="tech-item"><span class="check">✓</span> XLM-RoBERTa</div>
+      <div class="tech-item"><span class="check">✓</span> Sentence Transformers</div>
+      <div class="tech-item"><span class="check">✓</span> BM25 / TF-IDF</div>
+      <div class="tech-item"><span class="check">✓</span> FAISS Vector Index</div>
+      <div class="tech-item"><span class="check">✓</span> scikit-learn</div>
+      <div class="tech-item"><span class="check">✓</span> Hindi & Marathi NLP</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>BALLRIQ — Academic-Grade Cricket Intelligence System</p>
+    <p style="margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+      PySpark • DuckDB • Parquet • XLM-R • BM25 • FAISS • Hybrid RAG
+    </p>
+  </footer>
+</div>

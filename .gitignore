@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / frontend builds
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Local databases and logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+.cache/
+models/nlp/event_classifier_xlmr/
+
+# Generated data and indexes
+/data/interim/
+/data/processed/
+/data/lake/
+/models/**/model.pkl
+/models/ir/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

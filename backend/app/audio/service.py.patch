@@ -1,0 +1,65 @@
+--- backend/app/audio/service.py
++++ backend/app/audio/service.py
+@@ -10,6 +10,8 @@
+ from dataclasses import asdict
+ from typing import Any, Protocol
++from pathlib import Path
+ 
+ from backend.app.nlp.preprocessing.pipeline import NLPPreprocessingPipeline
++from backend.app.core.config import settings
+ 
+ 
+ class SpeechToTextProvider(Protocol):
+@@ -30,6 +32,33 @@
+         }
+ 
+ 
++class LocalTranscriptSpeechToTextProvider:
++    """Transcribes an audio path via a sidecar .txt file if one exists."""
++
++    def transcribe(self, audio: dict[str, Any]) -> dict[str, Any]:
++        transcript_path = audio.get("transcript_path")
++        audio_path = audio.get("audio_path")
++
++        target_path = transcript_path or (audio_path and str(Path(audio_path).with_suffix(".txt")))
++        if not target_path:
++            return UnavailableSpeechToTextProvider().transcribe(audio)
++
++        try:
++            resolved = Path(target_path).resolve()
++            if not resolved.is_relative_to(settings.DATA_DIR.resolve()):
++                return {"status": "rejected", "message": "Path outside data directory"}
++            if not resolved.exists():
++                return UnavailableSpeechToTextProvider().transcribe(audio)
++            
++            text = resolved.read_text(encoding="utf-8").strip()
++            if not text:
++                return UnavailableSpeechToTextProvider().transcribe(audio)
++                
++            return {"status": "ok", "transcript": text, "provider": "sidecar-txt", "language": None}
++        except Exception as e:
++            # any failure in path parsing or permissions gracefully degrade 
++            return UnavailableSpeechToTextProvider().transcribe(audio)
++
+ def normalize_transcript(transcript: str) -> str:
+     """Normalize Unicode and whitespace without altering the speaker's words."""
+@@ -38,10 +67,11 @@
+ 
+ class AudioAnalysisService:
+     def __init__(self, provider: SpeechToTextProvider | None = None) -> None:
+         self.pipeline = NLPPreprocessingPipeline()
+-        self.provider = provider or UnavailableSpeechToTextProvider()
++        self.provider = provider or LocalTranscriptSpeechToTextProvider()
+ 
+     def metadata(self, audio: dict[str, Any]) -> dict[str, Any]:
+         """Return caller-declared metadata; no file inspection is implied."""
+         return {key: value for key, value in audio.items() if value is not None}
+@@ -64,4 +94,8 @@
+ 
+     def transcribe(self, audio: dict[str, Any]) -> dict[str, Any]:
+-        return self.provider.transcribe(audio)
++        res = self.provider.transcribe(audio)
++        if res.get("status") == "ok" and res.get("transcript"):
++            # Also perform NLP side-effect (requirements say: "under key 'nlp'")
++            res["nlp"] = self.analyze_transcript(res["transcript"]).get("nlp")
++        return res

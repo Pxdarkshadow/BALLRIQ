@@ -1,0 +1,62 @@
+[
+  {
+    "query_id": "Q001",
+    "query": "Virat Kohli boundary four six",
+    "language": "en",
+    "match_id": "M001"
+  },
+  {
+    "query_id": "Q002",
+    "query": "कोहली चौका छक्का सीमा रेखा",
+    "language": "hi",
+    "match_id": "M001"
+  },
+  {
+    "query_id": "Q003",
+    "query": "कोहलीने मारलेला चौकार किंवा षटकार",
+    "language": "mr",
+    "match_id": "M001"
+  },
+  {
+    "query_id": "Q004",
+    "query": "Jasprit Bumrah wicket bowled caught",
+    "language": "en",
+    "match_id": "M001"
+  },
+  {
+    "query_id": "Q005",
+    "query": "बुमराह विकेट बोल्ड आउट",
+    "language": "hi",
+    "match_id": "M001"
+  },
+  {
+    "query_id": "Q006",
+    "query": "बुमराहने घेतलेली विकेट बाद",
+    "language": "mr",
+    "match_id": "M001"
+  },
+  {
+    "query_id": "Q007",
+    "query": "Rohit Sharma six over the boundary",
+    "language": "en",
+    "match_id": "M001"
+  },
+  {
+    "query_id": "Q008",
+    "query": "रोहित शर्मा छक्का गगनचुंबी",
+    "language": "hi",
+    "match_id": "M001"
+  },
+  {
+    "query_id": "Q009",
+    "query": "Powerplay overs run rate dot balls",
+    "language": "en",
+    "match_id": "M001"
+  },
+  {
+    "query_id": "Q010",
+    "query": "पावरप्ले डॉट गेंद कोई रन नहीं",
+    "language": "hi",
+    "match_id": "M001"
+  }
+]

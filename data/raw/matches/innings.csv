@@ -1,0 +1,101 @@
+innings_id,match_id,innings_number,batting_team,bowling_team,total_runs,wickets,overs,target
+M001_I1,M001,1,Australia,India,182,8,20.0,
+M001_I2,M001,2,India,Australia,186,5,19.2,183
+M002_I1,M002,1,South Africa,England,145,7,20.0,
+M002_I2,M002,2,England,South Africa,149,2,17.4,146
+M003_I1,M003,1,New Zealand,Pakistan,158,6,20.0,
+M003_I2,M003,2,Pakistan,New Zealand,162,4,18.5,159
+M004_I1,M004,1,Sri Lanka,Afghanistan,132,9,20.0,
+M004_I2,M004,2,Afghanistan,Sri Lanka,136,3,16.2,133
+M005_I1,M005,1,Netherlands,Bangladesh,118,8,20.0,
+M005_I2,M005,2,Bangladesh,Netherlands,122,6,18.3,119
+M006_I1,M006,1,India,Pakistan,192,5,20.0,
+M006_I2,M006,2,Pakistan,India,186,8,20.0,193
+M007_I1,M007,1,England,Australia,168,6,20.0,
+M007_I2,M007,2,Australia,England,172,7,19.4,169
+M008_I1,M008,1,New Zealand,South Africa,175,6,20.0,
+M008_I2,M008,2,South Africa,New Zealand,179,6,19.1,176
+M009_I1,M009,1,Sri Lanka,Pakistan,142,8,20.0,
+M009_I2,M009,2,Pakistan,Sri Lanka,146,5,18.2,143
+M010_I1,M010,1,Bangladesh,Afghanistan,155,7,20.0,
+M010_I2,M010,2,Afghanistan,Bangladesh,159,2,15.4,156
+M011_I1,M011,1,England,India,287,8,50.0,
+M011_I2,M011,2,India,England,291,7,48.3,288
+M012_I1,M012,1,England,India,321,6,50.0,
+M012_I2,M012,2,India,England,279,10,47.2,322
+M013_I1,M013,1,England,India,256,9,50.0,
+M013_I2,M013,2,India,England,260,4,45.1,257
+M014_I1,M014,1,Australia,Sri Lanka,294,7,50.0,
+M014_I2,M014,2,Sri Lanka,Australia,298,8,49.2,295
+M015_I1,M015,1,Sri Lanka,Australia,268,8,50.0,
+M015_I2,M015,2,Australia,Sri Lanka,272,5,47.3,269
+M016_I1,M016,1,Australia,Sri Lanka,302,6,50.0,
+M016_I2,M016,2,Sri Lanka,Australia,306,7,49.4,303
+M017_I1,M017,1,Australia,India,187,10,52.3,
+M017_I2,M017,2,India,Australia,420,3,120.0,
+M018_I1,M018,1,India,Australia,265,10,78.4,
+M018_I2,M018,2,Australia,India,269,3,61.2,266
+M019_I1,M019,1,Australia,India,312,10,95.2,
+M019_I2,M019,2,India,Australia,316,8,98.1,313
+M020_I1,M020,1,India,Australia,389,10,112.5,
+M020_I2,M020,2,Australia,India,392,8,108.3,390
+M021_I1,M021,1,Chennai Super Kings,Kolkata Knight Riders,189,6,20.0,
+M021_I2,M021,2,Kolkata Knight Riders,Chennai Super Kings,193,2,18.1,190
+M022_I1,M022,1,Sunrisers Hyderabad,Chennai Super Kings,172,8,20.0,
+M022_I2,M022,2,Chennai Super Kings,Sunrisers Hyderabad,176,4,19.2,173
+M023_I1,M023,1,Sunrisers Hyderabad,Kolkata Knight Riders,175,5,20.0,
+M023_I2,M023,2,Kolkata Knight Riders,Sunrisers Hyderabad,179,3,18.4,176
+M024_I1,M024,1,Rajasthan Royals,Royal Challengers Bangalore,168,7,20.0,
+M024_I2,M024,2,Royal Challengers Bangalore,Rajasthan Royals,172,6,19.3,169
+M025_I1,M025,1,Delhi Capitals,Mumbai Indians,154,9,20.0,
+M025_I2,M025,2,Mumbai Indians,Delhi Capitals,158,5,18.5,155
+M026_I1,M026,1,Punjab Kings,Kolkata Knight Riders,162,8,20.0,
+M026_I2,M026,2,Kolkata Knight Riders,Punjab Kings,166,4,17.5,163
+M027_I1,M027,1,Royal Challengers Bangalore,Chennai Super Kings,178,5,20.0,
+M027_I2,M027,2,Chennai Super Kings,Royal Challengers Bangalore,182,7,19.4,179
+M028_I1,M028,1,Gujarat Titans,Sunrisers Hyderabad,162,7,20.0,
+M028_I2,M028,2,Sunrisers Hyderabad,Gujarat Titans,166,2,17.2,163
+M029_I1,M029,1,Lucknow Super Giants,Delhi Capitals,158,6,20.0,
+M029_I2,M029,2,Delhi Capitals,Lucknow Super Giants,162,6,19.1,159
+M030_I1,M030,1,Chennai Super Kings,Rajasthan Royals,172,5,20.0,
+M030_I2,M030,2,Rajasthan Royals,Chennai Super Kings,176,5,19.3,173
+M031_I1,M031,1,Pakistan,India,148,8,20.0,
+M031_I2,M031,2,India,Pakistan,152,3,17.4,149
+M032_I1,M032,1,Bangladesh,Sri Lanka,134,9,20.0,
+M032_I2,M032,2,Sri Lanka,Bangladesh,138,4,16.2,135
+M033_I1,M033,1,Nepal,Afghanistan,108,10,19.4,
+M033_I2,M033,2,Afghanistan,Nepal,112,1,12.3,109
+M034_I1,M034,1,Sri Lanka,India,170,7,20.0,
+M034_I2,M034,2,India,Sri Lanka,174,2,15.5,171
+M035_I1,M035,1,Bangladesh,Pakistan,165,7,20.0,
+M035_I2,M035,2,Pakistan,Bangladesh,169,5,18.3,166
+M036_I1,M036,1,India,Afghanistan,212,4,20.0,
+M036_I2,M036,2,Afghanistan,India,156,10,19.2,213
+M037_I1,M037,1,Pakistan,Sri Lanka,152,8,20.0,
+M037_I2,M037,2,Sri Lanka,Pakistan,156,6,18.5,153
+M038_I1,M038,1,Nepal,Bangladesh,118,9,20.0,
+M038_I2,M038,2,Bangladesh,Nepal,122,3,14.4,119
+M039_I1,M039,1,Afghanistan,India,145,8,20.0,
+M039_I2,M039,2,India,Afghanistan,149,5,17.2,146
+M040_I1,M040,1,Bangladesh,Sri Lanka,178,6,20.0,
+M040_I2,M040,2,Sri Lanka,Bangladesh,182,7,19.4,179
+M041_I1,M041,1,India,Australia,345,7,50.0,
+M041_I2,M041,2,Australia,India,349,4,48.2,346
+M042_I1,M042,1,England,South Africa,298,8,50.0,
+M042_I2,M042,2,South Africa,England,302,6,48.5,299
+M043_I1,M043,1,Pakistan,New Zealand,267,8,50.0,
+M043_I2,M043,2,New Zealand,Pakistan,271,5,46.3,268
+M044_I1,M044,1,Afghanistan,Sri Lanka,256,9,50.0,
+M044_I2,M044,2,Sri Lanka,Afghanistan,234,10,48.1,257
+M045_I1,M045,1,Netherlands,Bangladesh,212,10,48.3,
+M045_I2,M045,2,Bangladesh,Netherlands,216,3,42.1,213
+M046_I1,M046,1,England,India,248,10,49.2,
+M046_I2,M046,2,India,England,252,2,41.4,249
+M047_I1,M047,1,Australia,South Africa,289,7,50.0,
+M047_I2,M047,2,South Africa,Australia,293,6,48.3,290
+M048_I1,M048,1,Afghanistan,New Zealand,234,9,50.0,
+M048_I2,M048,2,New Zealand,Afghanistan,238,4,44.2,235
+M049_I1,M049,1,Bangladesh,Pakistan,256,8,50.0,
+M049_I2,M049,2,Pakistan,Bangladesh,260,5,47.1,257
+M050_I1,M050,1,South Africa,India,287,8,50.0,
+M050_I2,M050,2,India,South Africa,291,3,45.2,288

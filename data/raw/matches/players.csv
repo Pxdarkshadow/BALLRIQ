@@ -1,0 +1,121 @@
+player_id,name,team,role,batting_style,bowling_style
+P001,Virat Kohli,India,batsman,Right-hand,Right-arm medium
+P002,Rohit Sharma,India,batsman,Right-hand,Right-arm offbreak
+P003,Jasprit Bumrah,India,bowler,Right-hand,Right-arm fast
+P004,Hardik Pandya,India,allrounder,Right-hand,Right-arm fast-medium
+P005,Ravindra Jadeja,India,allrounder,Left-hand,Left-arm orthodox
+P006,KL Rahul,India,wicketkeeper,Right-hand,
+P007,Shubman Gill,India,batsman,Right-hand,Right-arm offbreak
+P008,Suryakumar Yadav,India,batsman,Right-hand,Right-arm offbreak
+P009,Mohammed Shami,India,bowler,Right-hand,Right-arm fast
+P010,Mohammed Siraj,India,bowler,Right-hand,Right-arm fast-medium
+P011,Kuldeep Yadav,India,bowler,Right-hand,Left-arm wrist-spin
+P012,Yuzvendra Chahal,India,bowler,Right-hand,Right-arm legbreak
+P013,David Warner,Australia,batsman,Left-hand,Right-arm legbreak
+P014,Steve Smith,Australia,batsman,Right-hand,Right-arm legbreak
+P015,Pat Cummins,Australia,bowler,Right-hand,Right-arm fast
+P016,Mitchell Starc,Australia,bowler,Left-hand,Left-arm fast
+P017,Glenn Maxwell,Australia,allrounder,Right-hand,Right-arm offbreak
+P018,Marcus Stoinis,Australia,allrounder,Right-hand,Right-arm fast-medium
+P019,Adam Zampa,Australia,bowler,Right-hand,Right-arm legbreak
+P020,Josh Hazlewood,Australia,bowler,Right-hand,Right-arm fast-medium
+P021,Travis Head,Australia,batsman,Left-hand,Right-arm offbreak
+P022,Cameron Green,Australia,allrounder,Right-hand,Right-arm fast-medium
+P023,Alex Carey,Australia,wicketkeeper,Left-hand,
+P024,Josh Inglis,Australia,wicketkeeper,Right-hand,
+P025,Jos Buttler,England,wicketkeeper,Right-hand,
+P026,Jonny Bairstow,England,wicketkeeper,Right-hand,
+P027,Ben Stokes,England,allrounder,Left-hand,Right-arm fast-medium
+P028,Joe Root,England,batsman,Right-hand,Right-arm offbreak
+P029,Harry Brook,England,batsman,Right-hand,Right-arm fast-medium
+P030,Jofra Archer,England,bowler,Right-hand,Right-arm fast
+P031,Mark Wood,England,bowler,Right-hand,Right-arm fast
+P032,Chris Woakes,England,allrounder,Right-hand,Right-arm fast-medium
+P033,Adil Rashid,England,bowler,Right-hand,Right-arm legbreak
+P034,Moeen Ali,England,allrounder,Left-hand,Right-arm offbreak
+P035,Liam Livingstone,England,allrounder,Right-hand,Right-arm legbreak
+P036,Quinton de Kock,South Africa,wicketkeeper,Left-hand,
+P037,Temba Bavuma,South Africa,batsman,Right-hand,
+P038,Aiden Markram,South Africa,batsman,Right-hand,Right-arm offbreak
+P039,Heinrich Klaasen,South Africa,wicketkeeper,Right-hand,
+P040,David Miller,South Africa,batsman,Left-hand,
+P041,Kagiso Rabada,South Africa,bowler,Left-hand,Right-arm fast
+P042,Anrich Nortje,South Africa,bowler,Right-hand,Right-arm fast
+P043,Lungi Ngidi,South Africa,bowler,Right-hand,Right-arm fast-medium
+P044,Tabraiz Shamsi,South Africa,bowler,Right-hand,Left-arm wrist-spin
+P045,Keshav Maharaj,South Africa,bowler,Right-hand,Left-arm orthodox
+P046,Marco Jansen,South Africa,allrounder,Right-hand,Left-arm fast-medium
+P047,Kane Williamson,New Zealand,batsman,Right-hand,Right-arm offbreak
+P048,Devon Conway,New Zealand,wicketkeeper,Left-hand,
+P049,Glenn Phillips,New Zealand,batsman,Right-hand,Right-arm offbreak
+P050,Daryl Mitchell,New Zealand,allrounder,Right-hand,Right-arm fast-medium
+P051,Mitchell Santner,New Zealand,allrounder,Left-hand,Left-arm orthodox
+P052,Tim Southee,New Zealand,bowler,Right-hand,Right-arm fast-medium
+P053,Trent Boult,New Zealand,bowler,Right-hand,Left-arm fast
+P054,Lockie Ferguson,New Zealand,bowler,Right-hand,Right-arm fast
+P055,Ish Sodhi,New Zealand,bowler,Right-hand,Right-arm legbreak
+P056,Babar Azam,Pakistan,batsman,Right-hand,Right-arm offbreak
+P057,Mohammad Rizwan,Pakistan,wicketkeeper,Right-hand,
+P058,Fakhar Zaman,Pakistan,batsman,Left-hand,
+P059,Shadab Khan,Pakistan,allrounder,Right-hand,Right-arm legbreak
+P060,Shaheen Afridi,Pakistan,bowler,Left-hand,Left-arm fast
+P061,Haris Rauf,Pakistan,bowler,Right-hand,Right-arm fast
+P062,Naseem Shah,Pakistan,bowler,Right-hand,Right-arm fast
+P063,Iftikhar Ahmed,Pakistan,allrounder,Right-hand,Right-arm offbreak
+P064,Dasun Shanaka,Sri Lanka,allrounder,Right-hand,Right-arm fast-medium
+P065,Pathum Nissanka,Sri Lanka,batsman,Right-hand,
+P066,Kusal Mendis,Sri Lanka,wicketkeeper,Right-hand,
+P067,Charith Asalanka,Sri Lanka,batsman,Left-hand,
+P068,Wanindu Hasaranga,Sri Lanka,allrounder,Right-hand,Right-arm legbreak
+P069,Maheesh Theekshana,Sri Lanka,bowler,Right-hand,Right-arm offbreak
+P070,Dushmantha Chameera,Sri Lanka,bowler,Right-hand,Right-arm fast
+P071,Rashid Khan,Afghanistan,bowler,Right-hand,Right-arm legbreak
+P072,Mohammad Nabi,Afghanistan,allrounder,Right-hand,Right-arm offbreak
+P073,Rahmanullah Gurbaz,Afghanistan,wicketkeeper,Right-hand,
+P074,Ibrahim Zadran,Afghanistan,batsman,Right-hand,
+P075,Najibullah Zadran,Afghanistan,batsman,Left-hand,
+P076,Fazalhaq Farooqi,Afghanistan,bowler,Right-hand,Left-arm fast-medium
+P077,Naveen-ul-Haq,Afghanistan,bowler,Right-hand,Right-arm fast-medium
+P078,Shakib Al Hasan,Bangladesh,allrounder,Left-hand,Left-arm orthodox
+P079,Litton Das,Bangladesh,wicketkeeper,Right-hand,
+P080,Najmul Hossain Shanto,Bangladesh,batsman,Left-hand,
+P081,Towhid Hridoy,Bangladesh,batsman,Right-hand,
+P082,Taskin Ahmed,Bangladesh,bowler,Left-hand,Right-arm fast
+P083,Mustafizur Rahman,Bangladesh,bowler,Left-hand,Left-arm fast-medium
+P084,Mehidy Hasan Miraz,Bangladesh,allrounder,Right-hand,Right-arm offbreak
+P085,Mahmudullah,Bangladesh,allrounder,Right-hand,Right-arm offbreak
+P086,Max O'Dowd,Netherlands,batsman,Left-hand,
+P087,Vikramjit Singh,Netherlands,batsman,Right-hand,
+P088,Bas de Leede,Netherlands,allrounder,Right-hand,Right-arm fast-medium
+P089,Paul van Meekeren,Netherlands,bowler,Right-hand,Right-arm fast-medium
+P090,Logan van Beek,Netherlands,bowler,Right-hand,Right-arm fast-medium
+P091,Rachin Ravindra,New Zealand,allrounder,Left-hand,Left-arm orthodox
+P092,Will Young,New Zealand,batsman,Right-hand,
+P093,Matt Henry,New Zealand,bowler,Right-hand,Right-arm fast-medium
+P094,Will O'Rourke,New Zealand,bowler,Right-hand,Right-arm fast-medium
+P095,Ben Sears,New Zealand,bowler,Right-hand,Right-arm fast
+P096,Sean Abbott,Australia,allrounder,Right-hand,Right-arm fast-medium
+P097,Nathan Ellis,Australia,bowler,Right-hand,Right-arm fast-medium
+P098,Tanveer Sangha,Australia,bowler,Right-hand,Right-arm legbreak
+P099,Cooper Connolly,Australia,allrounder,Left-hand,Left-arm orthodox
+P100,Josh Philippe,Australia,wicketkeeper,Right-hand,
+P101,Shivam Dube,India,allrounder,Left-hand,Right-arm fast-medium
+P102,Rinku Singh,India,batsman,Left-hand,
+P103,Yashasvi Jaiswal,India,batsman,Left-hand,Right-arm legbreak
+P104,Tilak Varma,India,batsman,Left-hand,Right-arm offbreak
+P105,Ruturaj Gaikwad,India,batsman,Right-hand,Right-arm offbreak
+P106,Washington Sundar,India,allrounder,Left-hand,Right-arm offbreak
+P107,Axar Patel,India,allrounder,Left-hand,Left-arm orthodox
+P108,Mukesh Kumar,India,bowler,Right-hand,Right-arm fast-medium
+P109,Avesh Khan,India,bowler,Right-hand,Right-arm fast-medium
+P110,Arshdeep Singh,India,bowler,Left-hand,Left-arm fast-medium
+P111,Harshal Patel,India,bowler,Right-hand,Right-arm fast-medium
+P112,Deepak Chahar,India,bowler,Right-hand,Right-arm fast-medium
+P113,Bhuvneshwar Kumar,India,bowler,Right-hand,Right-arm fast-medium
+P114,Umesh Yadav,India,bowler,Right-hand,Right-arm fast
+P115,Jaydev Unadkat,India,bowler,Left-hand,Left-arm fast-medium
+P116,Navdeep Saini,India,bowler,Right-hand,Right-arm fast
+P117,Varun Chakravarthy,India,bowler,Right-hand,Right-arm legbreak
+P118,Ravi Bishnoi,India,bowler,Right-hand,Right-arm legbreak
+P119,Shahbaz Ahmed,India,allrounder,Left-hand,Left-arm orthodox
+P120,Abhishek Sharma,India,allrounder,Left-hand,Left-arm orthodox

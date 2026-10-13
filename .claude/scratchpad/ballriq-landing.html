@@ -1,0 +1,413 @@
+<title>BALLRIQ — Multilingual Cricket Intelligence</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --pitch-green: #0a4d3c;
+  --pitch-green-dark: #063428;
+  --floodlight: #f8fafc;
+  --boundary: #e2e8f0;
+  --scoreboard: #fbbf24;
+  --wicket: #dc2626;
+  --neutral-50: #f8faf9;
+  --neutral-100: #e8ebe9;
+  --neutral-200: #d1d6d3;
+  --neutral-700: #3a4540;
+  --neutral-800: #2a322e;
+  --neutral-900: #1a211d;
+
+  --bg: var(--floodlight);
+  --surface: white;
+  --text: var(--neutral-900);
+  --text-muted: var(--neutral-700);
+  --accent: var(--pitch-green);
+  --accent-hover: var(--pitch-green-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1410;
+    --surface: var(--neutral-900);
+    --text: var(--floodlight);
+    --text-muted: var(--neutral-200);
+    --neutral-50: var(--neutral-900);
+    --neutral-100: var(--neutral-800);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d1410;
+  --surface: var(--neutral-900);
+  --text: var(--floodlight);
+  --text-muted: var(--neutral-200);
+  --neutral-50: var(--neutral-900);
+  --neutral-100: var(--neutral-800);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: max(32px, env(safe-area-inset-top)) 20px max(48px, env(safe-area-inset-bottom));
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 64px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-mark {
+  width: 48px;
+  height: 48px;
+  background: var(--accent);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+.logo-text {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--neutral-200);
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 0 60px;
+}
+
+.hero h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  text-wrap: balance;
+}
+
+.hero p {
+  font-size: 20px;
+  color: var(--text-muted);
+  max-width: 60ch;
+  margin: 0 auto 48px;
+}
+
+.demo-box {
+  background: var(--surface);
+  border: 1px solid var(--neutral-200);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.demo-input {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.lang-btn {
+  padding: 10px 20px;
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-200);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.lang-btn:hover {
+  background: var(--neutral-100);
+}
+
+.lang-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.commentary-input {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  padding: 16px;
+  border: 1px solid var(--neutral-200);
+  border-radius: 8px;
+  width: 100%;
+  background: var(--neutral-50);
+  margin-bottom: 24px;
+}
+
+.result-box {
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-200);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.event-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.confidence {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+}
+
+.detected-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.result-text {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 80px 0;
+}
+
+.feature {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--neutral-200);
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+}
+
+.feature h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.feature p {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+footer {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid var(--neutral-200);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 20px 0 40px;
+  }
+
+  .demo-box {
+    padding: 24px;
+  }
+
+  .features {
+    margin: 60px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+
+<div class="container">
+  <header>
+    <div class="logo">
+      <div class="logo-mark">BR</div>
+      <div class="logo-text">BALLRIQ</div>
+    </div>
+    <div class="status-badge">
+      <div class="status-dot"></div>
+      Live
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Multilingual Cricket Intelligence</h1>
+    <p>Ask questions about cricket matches in Hindi, Marathi, or English. Get instant answers with verified sources.</p>
+
+    <div class="demo-box">
+      <div class="demo-input">
+        <button class="lang-btn active" data-lang="hi">हिन्दी</button>
+        <button class="lang-btn" data-lang="mr">मराठी</button>
+        <button class="lang-btn" data-lang="en">English</button>
+      </div>
+
+      <input type="text" class="commentary-input" id="commentaryInput" value="कोहली ने शानदार चौका लगाया कवर के पार!" placeholder="Enter cricket commentary...">
+
+      <div class="result-box" id="resultBox">
+        <div class="result-header">
+          <span class="event-badge" id="eventBadge">FOUR <span class="confidence" id="confBadge">98.4%</span></span>
+          <span class="detected-lang" id="langBadge">Detected: Hindi</span>
+        </div>
+        <div class="result-text" id="resultText">
+          Kohli scored a brilliant four past the cover region. The ball raced to the boundary as the fielder gave chase.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Instant Answers</h3>
+      <p>Ask any cricket question in your preferred language and get immediate, accurate responses.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Multilingual Support</h3>
+      <p>Full support for Hindi, Marathi, and English with automatic language detection.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Source Verified</h3>
+      <p>Every answer comes with citations from official match commentary and statistics.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Live Match Data</h3>
+      <p>Real-time processing of ball-by-ball commentary and match events as they happen.</p>
+    </div>
+  </section>
+
+  <footer>
+    BALLRIQ — Multilingual Cricket Intelligence Platform
+  </footer>
+</div>
+
+<script>
+const examples = {
+  hi: {
+    text: "कोहली ने शानदार चौका लगाया कवर के पार!",
+    event: "FOUR",
+    conf: "98.4%",
+    lang: "Detected: Hindi",
+    result: "Kohli scored a brilliant four past the cover region. The ball raced to the boundary as the fielder gave chase."
+  },
+  mr: {
+    text: "रोहितने सुंदर सहा मारला!",
+    event: "SIX",
+    conf: "96.2%",
+    lang: "Detected: Marathi",
+    result: "Rohit hit a beautiful six! The ball sailed over the boundary rope into the crowd."
+  },
+  en: {
+    text: "Bumrah bowls a perfect yorker, clean bowled!",
+    event: "WICKET",
+    conf: "99.1%",
+    lang: "Detected: English",
+    result: "Bumrah delivered a perfect yorker that crashed into the stumps. The batsman had no answer to that delivery."
+  }
+};
+
+const input = document.getElementById('commentaryInput');
+const langBtns = document.querySelectorAll('.lang-btn');
+
+langBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    langBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const lang = btn.dataset.lang;
+    const ex = examples[lang];
+
+    input.value = ex.text;
+    document.getElementById('eventBadge').innerHTML = `${ex.event} <span class="confidence">${ex.conf}</span>`;
+    document.getElementById('langBadge').textContent = ex.lang;
+    document.getElementById('resultText').textContent = ex.result;
+  });
+});
+
+input.addEventListener('input', (e) => {
+  // In a real implementation, this would call the backend API
+  // For demo purposes, we just show the structure
+});
+</script>

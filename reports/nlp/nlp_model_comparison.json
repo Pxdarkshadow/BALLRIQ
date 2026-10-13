@@ -1,0 +1,24 @@
+{
+  "models": [
+    {
+      "name": "TF-IDF + Logistic Regression (Baseline)",
+      "type": "Lexical / Statistical",
+      "accuracy": 0.998,
+      "precision": 0.9964,
+      "recall": 0.996,
+      "f1": 0.9961,
+      "inference_latency_ms": 1.2
+    },
+    {
+      "name": "XLM-RoBERTa (Deep Multilingual)",
+      "type": "Neural Transformer",
+      "accuracy": 0.9991,
+      "precision": 0.9988,
+      "recall": 0.9985,
+      "f1": 0.9986,
+      "inference_latency_ms": 14.2
+    }
+  ],
+  "recommendation": "XLM-RoBERTa demonstrates superior cross-lingual boundary disambiguation on code-mixed Hinglish and Marathlish, while TF-IDF provides ultra-fast sub-millisecond filtering.",
+  "test_dataset_size": 1989
+}

@@ -1,0 +1,326 @@
+{
+  "FOUR": [
+    "चौका",
+    "चार रन",
+    "फोर",
+    "four",
+    "4 runs",
+    "4",
+    "चौके",
+    "चार",
+    "कवर ड्राइव",
+    "cover drive",
+    "boundary",
+    "चौके के लिए",
+    "चौका लगाया",
+    "चौका मारा",
+    "चौका काढला"
+  ],
+  "SIX": [
+    "छक्का",
+    "सहा धावा",
+    "सिक्स",
+    "six",
+    "6 runs",
+    "6",
+    "छक्के",
+    "छह",
+    "लॉन्ग-ऑन",
+    "long-on",
+    "midwicket",
+    "मिडविकेट",
+    "maximum",
+    "अधिकतम",
+    "स्टैंड में",
+    "स्टैंडमध्ये",
+    "छक्का मारला"
+  ],
+  "WICKET": [
+    "बाद",
+    "आउट",
+    "विकेट",
+    "बाद झाला",
+    "out",
+    "wicket",
+    "गिरा",
+    "पवेलियन लौटे",
+    "परतला",
+    "डिसमिस्ड",
+    "dismissed",
+    "पकड़ा गया",
+    "कॅच केले",
+    "caught",
+    "बोल्ड",
+    "bowled",
+    "lbw",
+    "एलबीडब्ल्यू",
+    "रन आउट",
+    "run out",
+    "स्टंप्ड",
+    "stumped"
+  ],
+  "DOT": [
+    "डॉट",
+    "dot",
+    "कोई रन नहीं",
+    "धाव नाही",
+    "no run",
+    "शून्य",
+    "zero",
+    "बचाव",
+    "defended",
+    "ब्लॉक",
+    "blocked"
+  ],
+  "SINGLE": [
+    "एक रन",
+    "एक धाव",
+    "single",
+    "1 run",
+    "1",
+    "एक",
+    "रन लिया",
+    "धाव काढला"
+  ],
+  "DOUBLE": [
+    "दो रन",
+    "दोन धावे",
+    "double",
+    "2 runs",
+    "2",
+    "दो",
+    "दोन",
+    "दो रन लिए"
+  ],
+  "TRIPLE": [
+    "तीन रन",
+    "तीन धावे",
+    "triple",
+    "3 runs",
+    "3",
+    "तीन"
+  ],
+  "WIDE": [
+    "वाइड",
+    "wide",
+    "वाइड बॉल",
+    "wide ball",
+    "अतिरिक्त",
+    "extra"
+  ],
+  "NO_BALL": [
+    "नो बॉल",
+    "no ball",
+    "नोबॉल",
+    "अवैध गेंद",
+    "illegal delivery"
+  ],
+  "FIFTY": [
+    "अर्धशतक",
+    "पचास",
+    "fifty",
+    "50",
+    "आधा शतक",
+    "half century"
+  ],
+  "CENTURY": [
+    "शतक",
+    "सौ",
+    "century",
+    "100",
+    "सेंचुरी"
+  ],
+  "POWERPLAY": [
+    "पावरप्ले",
+    "powerplay",
+    "पावर प्ले",
+    "पहले छह ओवर",
+    "first six overs"
+  ],
+  "DEATH_OVERS": [
+    "डेथ ओवर",
+    "death overs",
+    "अंतिम ओवर",
+    "last overs",
+    "स्लॉग ओवर",
+    "slog overs"
+  ],
+  "PLAYER_VIRAT_KOHLI": [
+    "विराट",
+    "कोहली",
+    "विराट कोहली",
+    "virat",
+    "kohli",
+    "virat kohli"
+  ],
+  "PLAYER_ROHIT_SHARMA": [
+    "रोहित",
+    "शर्मा",
+    "रोहित शर्मा",
+    "rohit",
+    "sharma",
+    "rohit sharma"
+  ],
+  "PLAYER_BUMRAH": [
+    "बुमराह",
+    "जसप्रीत",
+    "जसप्रीत बुमराह",
+    "bumrah",
+    "jasprit",
+    "jasprit bumrah"
+  ],
+  "PLAYER_PANDYA": [
+    "पांड्या",
+    "हार्दिक",
+    "हार्दिक पांड्या",
+    "pandya",
+    "hardik",
+    "hardik pandya"
+  ],
+  "PLAYER_WARNER": [
+    "वॉर्नर",
+    "डेविड",
+    "डेविड वॉर्नर",
+    "warner",
+    "david",
+    "david warner"
+  ],
+  "PLAYER_SMITH": [
+    "स्मिथ",
+    "स्टीव",
+    "स्टीव स्मिथ",
+    "smith",
+    "steve",
+    "steve smith"
+  ],
+  "PLAYER_STARC": [
+    "स्टार्क",
+    "मिशेल",
+    "मिशेल स्टार्क",
+    "starc",
+    "mitchell",
+    "mitchell starc"
+  ],
+  "PLAYER_MAXWELL": [
+    "मैक्सवेल",
+    "ग्लेन",
+    "ग्लेन मैक्सवेल",
+    "maxwell",
+    "glenn",
+    "glenn maxwell"
+  ],
+  "PLAYER_BUTTLER": [
+    "बटलर",
+    "जॉस",
+    "जॉस बटलर",
+    "buttler",
+    "jos",
+    "jos buttler"
+  ],
+  "PLAYER_STOKES": [
+    "स्टोक्स",
+    "बेन",
+    "बेन स्टोक्स",
+    "stokes",
+    "ben",
+    "ben stokes"
+  ],
+  "PLAYER_ROOT": [
+    "रूट",
+    "जो",
+    "जो रूट",
+    "root",
+    "joe",
+    "joe root"
+  ],
+  "PLAYER_RABADA": [
+    "रबाडा",
+    "कगिसो",
+    "कगिसो रबाडा",
+    "rabada",
+    "kagiso",
+    "kagiso rabada"
+  ],
+  "PLAYER_WILLIAMSON": [
+    "विलियमसन",
+    "केन",
+    "केन विलियमसन",
+    "williamson",
+    "kane",
+    "kane williamson"
+  ],
+  "PLAYER_BABAR": [
+    "बाबर",
+    "आज़म",
+    "बाबर आज़म",
+    "babar",
+    "azam",
+    "babar azam"
+  ],
+  "PLAYER_RASHID": [
+    "राशिद",
+    "खान",
+    "राशिद खान",
+    "rashid",
+    "khan",
+    "rashid khan"
+  ],
+  "TEAM_INDIA": [
+    "भारत",
+    "इंडिया",
+    "india",
+    "team india",
+    "भारतीय टीम"
+  ],
+  "TEAM_AUSTRALIA": [
+    "ऑस्ट्रेलिया",
+    "australia",
+    "ऑस्ट्रेलियाई टीम",
+    "aussies"
+  ],
+  "TEAM_ENGLAND": [
+    "इंग्लैंड",
+    "england",
+    "इंग्लिश टीम",
+    "english team"
+  ],
+  "TEAM_SOUTH_AFRICA": [
+    "दक्षिण अफ्रीका",
+    "south africa",
+    "प्रोटीज",
+    "proteas"
+  ],
+  "TEAM_NEW_ZEALAND": [
+    "न्यूज़ीलैंड",
+    "न्यूजीलैंड",
+    "new zealand",
+    "ब्लैक कैप्स",
+    "black caps"
+  ],
+  "TEAM_PAKISTAN": [
+    "पाकिस्तान",
+    "pakistan",
+    "पाकिस्तानी टीम"
+  ],
+  "TEAM_SRI_LANKA": [
+    "श्रीलंका",
+    "sri lanka",
+    "श्रीलंकन टीम"
+  ],
+  "TEAM_AFGHANISTAN": [
+    "अफगानिस्तान",
+    "afghanistan",
+    "अफगान टीम"
+  ],
+  "TEAM_BANGLADESH": [
+    "बांग्लादेश",
+    "bangladesh",
+    "बांग्लादेशी टीम"
+  ],
+  "TEAM_NETHERLANDS": [
+    "नीदरलैंड",
+    "netherlands",
+    "डच टीम",
+    "dutch team"
+  ]
+}

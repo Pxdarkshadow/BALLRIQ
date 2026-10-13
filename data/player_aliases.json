@@ -1,0 +1,453 @@
+{
+  "P001": {
+    "canonical": "Virat Kohli",
+    "aliases": [
+      "विराट",
+      "कोहली",
+      "विराट कोहली",
+      "virat",
+      "kohli",
+      "virat kohli",
+      "Virat",
+      "Kohli"
+    ]
+  },
+  "P002": {
+    "canonical": "Rohit Sharma",
+    "aliases": [
+      "रोहित",
+      "शर्मा",
+      "रोहित शर्मा",
+      "rohit",
+      "sharma",
+      "rohit sharma",
+      "Rohit",
+      "Sharma"
+    ]
+  },
+  "P003": {
+    "canonical": "Jasprit Bumrah",
+    "aliases": [
+      "बुमराह",
+      "जसप्रीत",
+      "जसप्रीत बुमराह",
+      "bumrah",
+      "jasprit",
+      "jasprit bumrah",
+      "Bumrah",
+      "Jasprit"
+    ]
+  },
+  "P004": {
+    "canonical": "Hardik Pandya",
+    "aliases": [
+      "पांड्या",
+      "हार्दिक",
+      "हार्दिक पांड्या",
+      "pandya",
+      "hardik",
+      "hardik pandya",
+      "Pandya",
+      "Hardik"
+    ]
+  },
+  "P005": {
+    "canonical": "Ravindra Jadeja",
+    "aliases": [
+      "जडेजा",
+      "रविंद्र",
+      "रविंद्र जडेजा",
+      "jadeja",
+      "ravindra",
+      "ravindra jadeja",
+      "Jadeja",
+      "Ravindra"
+    ]
+  },
+  "P006": {
+    "canonical": "KL Rahul",
+    "aliases": [
+      "राहुल",
+      "के एल राहुल",
+      "rahul",
+      "kl rahul",
+      "k.l. rahul",
+      "Rahul",
+      "KL Rahul"
+    ]
+  },
+  "P007": {
+    "canonical": "Shubman Gill",
+    "aliases": [
+      "शुभमन",
+      "गिल",
+      "शुभमन गिल",
+      "shubman",
+      "gill",
+      "shubman gill",
+      "Shubman",
+      "Gill"
+    ]
+  },
+  "P008": {
+    "canonical": "Suryakumar Yadav",
+    "aliases": [
+      "सूर्यकुमार",
+      "यादव",
+      "सूर्यकुमार यादव",
+      "suryakumar",
+      "yadav",
+      "suryakumar yadav",
+      "Suryakumar",
+      "Yadav",
+      "SKY"
+    ]
+  },
+  "P009": {
+    "canonical": "Mohammed Shami",
+    "aliases": [
+      "शमी",
+      "मोहम्मद शमी",
+      "shami",
+      "mohammed shami",
+      "Shami",
+      "Mohammed Shami"
+    ]
+  },
+  "P010": {
+    "canonical": "Mohammed Siraj",
+    "aliases": [
+      "सिराज",
+      "मोहम्मद सिराज",
+      "siraj",
+      "mohammed siraj",
+      "Siraj",
+      "Mohammed Siraj"
+    ]
+  },
+  "P013": {
+    "canonical": "David Warner",
+    "aliases": [
+      "वॉर्नर",
+      "डेविड",
+      "डेविड वॉर्नर",
+      "warner",
+      "david",
+      "david warner",
+      "Warner",
+      "David"
+    ]
+  },
+  "P014": {
+    "canonical": "Steve Smith",
+    "aliases": [
+      "स्मिथ",
+      "स्टीव",
+      "स्टीव स्मिथ",
+      "smith",
+      "steve",
+      "steve smith",
+      "Smith",
+      "Steve"
+    ]
+  },
+  "P015": {
+    "canonical": "Pat Cummins",
+    "aliases": [
+      "कमिंस",
+      "पैट",
+      "पैट कमिंस",
+      "cummins",
+      "pat",
+      "pat cummins",
+      "Cummins",
+      "Pat"
+    ]
+  },
+  "P016": {
+    "canonical": "Mitchell Starc",
+    "aliases": [
+      "स्टार्क",
+      "मिशेल",
+      "मिशेल स्टार्क",
+      "starc",
+      "mitchell",
+      "mitchell starc",
+      "Starc",
+      "Mitchell"
+    ]
+  },
+  "P017": {
+    "canonical": "Glenn Maxwell",
+    "aliases": [
+      "मैक्सवेल",
+      "ग्लेन",
+      "ग्लेन मैक्सवेल",
+      "maxwell",
+      "glenn",
+      "glenn maxwell",
+      "Maxwell",
+      "Glenn"
+    ]
+  },
+  "P021": {
+    "canonical": "Travis Head",
+    "aliases": [
+      "हेड",
+      "ट्रैविस",
+      "ट्रैविस हेड",
+      "head",
+      "travis",
+      "travis head",
+      "Head",
+      "Travis"
+    ]
+  },
+  "P025": {
+    "canonical": "Jos Buttler",
+    "aliases": [
+      "बटलर",
+      "जॉस",
+      "जॉस बटलर",
+      "buttler",
+      "jos",
+      "jos buttler",
+      "Buttler",
+      "Jos"
+    ]
+  },
+  "P027": {
+    "canonical": "Ben Stokes",
+    "aliases": [
+      "स्टोक्स",
+      "बेन",
+      "बेन स्टोक्स",
+      "stokes",
+      "ben",
+      "ben stokes",
+      "Stokes",
+      "Ben"
+    ]
+  },
+  "P028": {
+    "canonical": "Joe Root",
+    "aliases": [
+      "रूट",
+      "जो",
+      "जो रूट",
+      "root",
+      "joe",
+      "joe root",
+      "Root",
+      "Joe"
+    ]
+  },
+  "P030": {
+    "canonical": "Jofra Archer",
+    "aliases": [
+      "आर्चर",
+      "जोफ्रा",
+      "जोफ्रा आर्चर",
+      "archer",
+      "jofra",
+      "jofra archer",
+      "Archer",
+      "Jofra"
+    ]
+  },
+  "P036": {
+    "canonical": "Quinton de Kock",
+    "aliases": [
+      "डिकॉक",
+      "क्विंटन",
+      "क्विंटन डिकॉक",
+      "de kock",
+      "quinton",
+      "quinton de kock",
+      "de Kock",
+      "Quinton"
+    ]
+  },
+  "P038": {
+    "canonical": "Aiden Markram",
+    "aliases": [
+      "मार्करम",
+      "एडन",
+      "एडन मार्करम",
+      "markram",
+      "aiden",
+      "aiden markram",
+      "Markram",
+      "Aiden"
+    ]
+  },
+  "P041": {
+    "canonical": "Kagiso Rabada",
+    "aliases": [
+      "रबाडा",
+      "कगिसो",
+      "कगिसो रबाडा",
+      "rabada",
+      "kagiso",
+      "kagiso rabada",
+      "Rabada",
+      "Kagiso"
+    ]
+  },
+  "P047": {
+    "canonical": "Kane Williamson",
+    "aliases": [
+      "विलियमसन",
+      "केन",
+      "केन विलियमसन",
+      "williamson",
+      "kane",
+      "kane williamson",
+      "Williamson",
+      "Kane"
+    ]
+  },
+  "P048": {
+    "canonical": "Devon Conway",
+    "aliases": [
+      "कॉन्वे",
+      "डेवोन",
+      "डेवोन कॉन्वे",
+      "conway",
+      "devon",
+      "devon conway",
+      "Conway",
+      "Devon"
+    ]
+  },
+  "P056": {
+    "canonical": "Babar Azam",
+    "aliases": [
+      "बाबर",
+      "आज़म",
+      "बाबर आज़म",
+      "babar",
+      "azam",
+      "babar azam",
+      "Babar",
+      "Azam"
+    ]
+  },
+  "P057": {
+    "canonical": "Mohammad Rizwan",
+    "aliases": [
+      "रिज़वान",
+      "मोहम्मद",
+      "मोहम्मद रिज़वान",
+      "rizwan",
+      "mohammad",
+      "mohammad rizwan",
+      "Rizwan",
+      "Mohammad"
+    ]
+  },
+  "P060": {
+    "canonical": "Shaheen Afridi",
+    "aliases": [
+      "शाहीन",
+      "अफरीदी",
+      "शाहीन अफरीदी",
+      "shaheen",
+      "afridi",
+      "shaheen afridi",
+      "Shaheen",
+      "Afridi"
+    ]
+  },
+  "P068": {
+    "canonical": "Wanindu Hasaranga",
+    "aliases": [
+      "हसरंगा",
+      "वानिंदु",
+      "वानिंदु हसरंगा",
+      "hasaranga",
+      "wanindu",
+      "wanindu hasaranga",
+      "Hasaranga",
+      "Wanindu"
+    ]
+  },
+  "P071": {
+    "canonical": "Rashid Khan",
+    "aliases": [
+      "राशिद",
+      "खान",
+      "राशिद खान",
+      "rashid",
+      "khan",
+      "rashid khan",
+      "Rashid",
+      "Khan"
+    ]
+  },
+  "P073": {
+    "canonical": "Rahmanullah Gurbaz",
+    "aliases": [
+      "गुरबाज़",
+      "रहमानुल्लाह",
+      "रहमानुल्लाह गुरबाज़",
+      "gurbaz",
+      "rahmanullah",
+      "rahmanullah gurbaz",
+      "Gurbaz",
+      "Rahmanullah"
+    ]
+  },
+  "P078": {
+    "canonical": "Shakib Al Hasan",
+    "aliases": [
+      "शाकिब",
+      "हसन",
+      "शाकिब अल हसन",
+      "shakib",
+      "hasan",
+      "shakib al hasan",
+      "Shakib",
+      "Hasan"
+    ]
+  },
+  "P105": {
+    "canonical": "Ruturaj Gaikwad",
+    "aliases": [
+      "गायकवाड",
+      "रुतुराज",
+      "रुतुराज गायकवाड",
+      "gaikwad",
+      "ruturaj",
+      "ruturaj gaikwad",
+      "Gaikwad",
+      "Ruturaj"
+    ]
+  },
+  "P101": {
+    "canonical": "Shivam Dube",
+    "aliases": [
+      "डुबे",
+      "शिवम",
+      "शिवम डुबे",
+      "dube",
+      "shivam",
+      "shivam dube",
+      "Dube",
+      "Shivam"
+    ]
+  },
+  "P089": {
+    "canonical": "Sunil Narine",
+    "aliases": [
+      "नरेन",
+      "सुनील",
+      "सुनील नरेन",
+      "narine",
+      "sunil",
+      "sunil narine",
+      "Narine",
+      "Sunil"
+    ]
+  }
+}

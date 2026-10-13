@@ -1,0 +1,27 @@
+{
+  "max_features": 10000,
+  "ngram_range": [
+    1,
+    2
+  ],
+  "min_df": 2,
+  "max_df": 0.95,
+  "C": 1.0,
+  "class_weight": "balanced",
+  "random_state": 42,
+  "classes": [
+    "CENTURY",
+    "DOT",
+    "DOUBLE",
+    "FIFTY",
+    "FOUR",
+    "NO_BALL",
+    "OTHER",
+    "SINGLE",
+    "SIX",
+    "TRIPLE",
+    "WICKET",
+    "WIDE"
+  ],
+  "is_fitted": true
+}

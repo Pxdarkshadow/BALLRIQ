@@ -1,0 +1,289 @@
+{
+  "validation_timestamp": "2026-08-30T12:55:33.125806",
+  "matches": {
+    "total_records": 50,
+    "valid_records": 50,
+    "duplicate_match_id": 0,
+    "invalid_date": 0,
+    "invalid_format": 0,
+    "missing_fields": 0,
+    "issues": []
+  },
+  "players": {
+    "total_records": 120,
+    "valid_records": 120,
+    "duplicate_player_id": 0,
+    "missing_fields": 0,
+    "issues": []
+  },
+  "innings": {
+    "total_records": 100,
+    "valid_records": 100,
+    "invalid_match_id": 0,
+    "invalid_innings_number": 0,
+    "issues": []
+  },
+  "commentary": {
+    "total_records": 13423,
+    "valid_records": 13423,
+    "duplicate_records": 45,
+    "missing_text": 0,
+    "invalid_language": 0,
+    "missing_label": 0,
+    "invalid_event_label": 0,
+    "invalid_timestamp": 0,
+    "invalid_match_id": 0,
+    "invalid_commentary_id": 0,
+    "encoding_errors": 0,
+    "invalid_dismissal_type": 0,
+    "confidence_issues": 0,
+    "issues": [
+      {
+        "line": 438,
+        "type": "duplicate_id",
+        "commentary_id": "M041_C_46458"
+      },
+      {
+        "line": 920,
+        "type": "duplicate_id",
+        "commentary_id": "M008_C_28953"
+      },
+      {
+        "line": 1336,
+        "type": "duplicate_id",
+        "commentary_id": "M002_C_86919"
+      },
+      {
+        "line": 1390,
+        "type": "duplicate_id",
+        "commentary_id": "M002_C_42118"
+      },
+      {
+        "line": 1974,
+        "type": "duplicate_id",
+        "commentary_id": "M018_C_25765"
+      },
+      {
+        "line": 2144,
+        "type": "duplicate_id",
+        "commentary_id": "M016_C_36516"
+      },
+      {
+        "line": 2267,
+        "type": "duplicate_id",
+        "commentary_id": "M016_C_90733"
+      },
+      {
+        "line": 2386,
+        "type": "duplicate_id",
+        "commentary_id": "M016_C_79348"
+      },
+      {
+        "line": 2965,
+        "type": "duplicate_id",
+        "commentary_id": "M015_C_54199"
+      },
+      {
+        "line": 2996,
+        "type": "duplicate_id",
+        "commentary_id": "M015_C_87969"
+      },
+      {
+        "line": 3394,
+        "type": "duplicate_id",
+        "commentary_id": "M009_C_29915"
+      },
+      {
+        "line": 3935,
+        "type": "duplicate_id",
+        "commentary_id": "M007_C_47291"
+      },
+      {
+        "line": 3970,
+        "type": "duplicate_id",
+        "commentary_id": "M007_C_53821"
+      },
+      {
+        "line": 4873,
+        "type": "duplicate_id",
+        "commentary_id": "M006_C_95303"
+      },
+      {
+        "line": 5442,
+        "type": "duplicate_id",
+        "commentary_id": "M038_C_17983"
+      },
+      {
+        "line": 5566,
+        "type": "duplicate_id",
+        "commentary_id": "M028_C_85150"
+      },
+      {
+        "line": 5640,
+        "type": "duplicate_id",
+        "commentary_id": "M028_C_14309"
+      },
+      {
+        "line": 5911,
+        "type": "duplicate_id",
+        "commentary_id": "M028_C_75958"
+      },
+      {
+        "line": 6086,
+        "type": "duplicate_id",
+        "commentary_id": "M002_C_12790"
+      },
+      {
+        "line": 6177,
+        "type": "duplicate_id",
+        "commentary_id": "M002_C_72068"
+      },
+      {
+        "line": 7145,
+        "type": "duplicate_id",
+        "commentary_id": "M009_C_70044"
+      },
+      {
+        "line": 7155,
+        "type": "duplicate_id",
+        "commentary_id": "M009_C_43843"
+      },
+      {
+        "line": 7312,
+        "type": "duplicate_id",
+        "commentary_id": "M014_C_44490"
+      },
+      {
+        "line": 7584,
+        "type": "duplicate_id",
+        "commentary_id": "M038_C_13825"
+      },
+      {
+        "line": 8395,
+        "type": "duplicate_id",
+        "commentary_id": "M048_C_39737"
+      },
+      {
+        "line": 8676,
+        "type": "duplicate_id",
+        "commentary_id": "M018_C_84934"
+      },
+      {
+        "line": 8696,
+        "type": "duplicate_id",
+        "commentary_id": "M018_C_11595"
+      },
+      {
+        "line": 8762,
+        "type": "duplicate_id",
+        "commentary_id": "M041_C_88386"
+      },
+      {
+        "line": 8928,
+        "type": "duplicate_id",
+        "commentary_id": "M039_C_52738"
+      },
+      {
+        "line": 8966,
+        "type": "duplicate_id",
+        "commentary_id": "M039_C_71625"
+      },
+      {
+        "line": 9220,
+        "type": "duplicate_id",
+        "commentary_id": "M001_C_38057"
+      },
+      {
+        "line": 10287,
+        "type": "duplicate_id",
+        "commentary_id": "M018_C_89337"
+      },
+      {
+        "line": 10297,
+        "type": "duplicate_id",
+        "commentary_id": "M018_C_24992"
+      },
+      {
+        "line": 10333,
+        "type": "duplicate_id",
+        "commentary_id": "M018_C_25429"
+      },
+      {
+        "line": 10477,
+        "type": "duplicate_id",
+        "commentary_id": "M002_C_14501"
+      },
+      {
+        "line": 11084,
+        "type": "duplicate_id",
+        "commentary_id": "M006_C_48761"
+      },
+      {
+        "line": 11649,
+        "type": "duplicate_id",
+        "commentary_id": "M002_C_57802"
+      },
+      {
+        "line": 11828,
+        "type": "duplicate_id",
+        "commentary_id": "M016_C_75878"
+      },
+      {
+        "line": 11911,
+        "type": "duplicate_id",
+        "commentary_id": "M009_C_34414"
+      },
+      {
+        "line": 12019,
+        "type": "duplicate_id",
+        "commentary_id": "M035_C_21613"
+      },
+      {
+        "line": 12519,
+        "type": "duplicate_id",
+        "commentary_id": "M018_C_70321"
+      },
+      {
+        "line": 12615,
+        "type": "duplicate_id",
+        "commentary_id": "M009_C_44721"
+      },
+      {
+        "line": 12938,
+        "type": "duplicate_id",
+        "commentary_id": "M045_C_27001"
+      },
+      {
+        "line": 12999,
+        "type": "duplicate_id",
+        "commentary_id": "M006_C_26151"
+      },
+      {
+        "line": 13081,
+        "type": "duplicate_id",
+        "commentary_id": "M038_C_64036"
+      }
+    ]
+  },
+  "audio": {
+    "total_records": 400,
+    "valid_records": 400,
+    "duplicate_records": 0,
+    "missing_transcript": 0,
+    "invalid_language": 0,
+    "invalid_timestamp": 0,
+    "invalid_match_id": 0,
+    "invalid_audio_id": 0,
+    "encoding_errors": 0,
+    "duration_issues": 0,
+    "issues": []
+  },
+  "summary": {
+    "total_matches": 50,
+    "total_players": 120,
+    "total_innings": 100,
+    "total_commentary": 13423,
+    "total_audio": 400,
+    "total_issues": 45
+  }
+}

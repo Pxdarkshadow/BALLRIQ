@@ -1,0 +1,51 @@
+match_id,date,format,tournament,venue,team_a,team_b,winner,result,toss_winner,toss_decision
+M001,2024-06-15,T20,ICC T20 World Cup 2024,"Kensington Oval, Bridgetown, Barbados",India,Australia,India,"India won by 5 wickets",Australia,field
+M002,2024-06-16,T20,ICC T20 World Cup 2024,"Kensington Oval, Bridgetown, Barbados",England,South Africa,England,"England won by 8 wickets",South Africa,bat
+M003,2024-06-17,T20,ICC T20 World Cup 2024,"Providence Stadium, Guyana",New Zealand,Pakistan,Pakistan,"Pakistan won by 6 wickets",New Zealand,bat
+M004,2024-06-18,T20,ICC T20 World Cup 2024,"Providence Stadium, Guyana",Sri Lanka,Afghanistan,Afghanistan,"Afghanistan won by 7 wickets",Sri Lanka,field
+M005,2024-06-19,T20,ICC T20 World Cup 2024,"Brian Lara Stadium, Trinidad",Bangladesh,Netherlands,Bangladesh,"Bangladesh won by 4 wickets",Netherlands,bat
+M006,2024-06-20,T20,ICC T20 World Cup 2024,"Brian Lara Stadium, Trinidad",India,Pakistan,India,"India won by 6 runs",Pakistan,field
+M007,2024-06-21,T20,ICC T20 World Cup 2024,"Kensington Oval, Bridgetown, Barbados",Australia,England,Australia,"Australia won by 3 wickets",England,bat
+M008,2024-06-22,T20,ICC T20 World Cup 2024,"Kensington Oval, Bridgetown, Barbados",South Africa,New Zealand,South Africa,"South Africa won by 4 wickets",New Zealand,field
+M009,2024-06-23,T20,ICC T20 World Cup 2024,"Providence Stadium, Guyana",Pakistan,Sri Lanka,Pakistan,"Pakistan won by 5 wickets",Sri Lanka,bat
+M010,2024-06-24,T20,ICC T20 World Cup 2024,"Providence Stadium, Guyana",Afghanistan,Bangladesh,Afghanistan,"Afghanistan won by 8 wickets",Bangladesh,field
+M011,2024-07-01,ODI,India Tour of England 2024,"Lord's, London, England",England,India,India,"India won by 3 wickets",England,bat
+M012,2024-07-04,ODI,India Tour of England 2024,"The Oval, London, England",England,India,England,"England won by 42 runs",India,field
+M013,2024-07-07,ODI,India Tour of England 2024,"Old Trafford, Manchester, England",England,India,India,"India won by 6 wickets",England,bat
+M014,2024-07-10,ODI,Australia Tour of Sri Lanka 2024,"R. Premadasa Stadium, Colombo, Sri Lanka",Sri Lanka,Australia,Sri Lanka,"Sri Lanka won by 2 wickets",Australia,field
+M015,2024-07-13,ODI,Australia Tour of Sri Lanka 2024,"R. Premadasa Stadium, Colombo, Sri Lanka",Sri Lanka,Australia,Australia,"Australia won by 5 wickets",Sri Lanka,bat
+M016,2024-07-16,ODI,Australia Tour of Sri Lanka 2024,"Pallekele Stadium, Kandy, Sri Lanka",Sri Lanka,Australia,Sri Lanka,"Sri Lanka won by 3 wickets",Australia,field
+M017,2024-08-01,Test,Border-Gavaskar Trophy 2024,"Narendra Modi Stadium, Ahmedabad, India",India,Australia,India,"India won by an innings and 32 runs",Australia,bat
+M018,2024-08-09,Test,Border-Gavaskar Trophy 2024,"M. Chinnaswamy Stadium, Bengaluru, India",India,Australia,Australia,"Australia won by 7 wickets",India,bat
+M019,2024-08-17,Test,Border-Gavaskar Trophy 2024,"Wankhede Stadium, Mumbai, India",India,Australia,India,"India won by 2 wickets",India,bat
+M020,2024-08-25,Test,Border-Gavaskar Trophy 2024,"M. A. Chidambaram Stadium, Chennai, India",India,Australia,Draw,"Match drawn",Australia,bat
+M021,2024-06-15,T20,IPL 2024 Final,"M. A. Chidambaram Stadium, Chennai, India",Chennai Super Kings,Kolkata Knight Riders,Kolkata Knight Riders,"Kolkata Knight Riders won by 8 wickets",Chennai Super Kings,bat
+M022,2024-06-10,T20,IPL 2024 Qualifier 1,"Narendra Modi Stadium, Ahmedabad, India",Chennai Super Kings,Sunrisers Hyderabad,Chennai Super Kings,"Chennai Super Kings won by 6 wickets",Sunrisers Hyderabad,field
+M023,2024-06-12,T20,IPL 2024 Qualifier 2,"M. A. Chidambaram Stadium, Chennai, India",Sunrisers Hyderabad,Kolkata Knight Riders,Kolkata Knight Riders,"Kolkata Knight Riders won by 7 wickets",Sunrisers Hyderabad,bat
+M024,2024-06-08,T20,IPL 2024 Eliminator,"Narendra Modi Stadium, Ahmedabad, India",Rajasthan Royals,Royal Challengers Bangalore,Royal Challengers Bangalore,"Royal Challengers Bangalore won by 4 wickets",Rajasthan Royals,field
+M025,2024-06-05,T20,IPL 2024,"Wankhede Stadium, Mumbai, India",Mumbai Indians,Delhi Capitals,Mumbai Indians,"Mumbai Indians won by 5 wickets",Delhi Capitals,bat
+M026,2024-06-03,T20,IPL 2024,"Eden Gardens, Kolkata, India",Kolkata Knight Riders,Punjab Kings,Kolkata Knight Riders,"Kolkata Knight Riders won by 6 wickets",Punjab Kings,field
+M027,2024-06-01,T20,IPL 2024,"M. Chinnaswamy Stadium, Bengaluru, India",Royal Challengers Bangalore,Chennai Super Kings,Chennai Super Kings,"Chennai Super Kings won by 3 wickets",Royal Challengers Bangalore,bat
+M028,2024-05-30,T20,IPL 2024,"Rajiv Gandhi Stadium, Hyderabad, India",Sunrisers Hyderabad,Gujarat Titans,Sunrisers Hyderabad,"Sunrisers Hyderabad won by 8 wickets",Gujarat Titans,field
+M029,2024-05-28,T20,IPL 2024,"Arun Jaitley Stadium, Delhi, India",Delhi Capitals,Lucknow Super Giants,Delhi Capitals,"Delhi Capitals won by 4 wickets",Lucknow Super Giants,bat
+M030,2024-05-26,T20,IPL 2024,"Barsapara Stadium, Guwahati, India",Rajasthan Royals,Chennai Super Kings,Rajasthan Royals,"Rajasthan Royals won by 5 wickets",Chennai Super Kings,field
+M031,2024-09-01,T20,Asia Cup 2024,"Dubai International Stadium, Dubai, UAE",India,Pakistan,India,"India won by 7 wickets",Pakistan,field
+M032,2024-09-03,T20,Asia Cup 2024,"Dubai International Stadium, Dubai, UAE",Sri Lanka,Bangladesh,Sri Lanka,"Sri Lanka won by 6 wickets",Bangladesh,bat
+M033,2024-09-05,T20,Asia Cup 2024,"Sharjah Cricket Stadium, Sharjah, UAE",Afghanistan,Nepal,Afghanistan,"Afghanistan won by 9 wickets",Nepal,field
+M034,2024-09-07,T20,Asia Cup 2024,"Sharjah Cricket Stadium, Sharjah, UAE",India,Sri Lanka,India,"India won by 8 wickets",Sri Lanka,bat
+M035,2024-09-09,T20,Asia Cup 2024,"Dubai International Stadium, Dubai, UAE",Pakistan,Bangladesh,Pakistan,"Pakistan won by 5 wickets",Bangladesh,field
+M036,2024-09-11,T20,Asia Cup 2024,"Dubai International Stadium, Dubai, UAE",Afghanistan,India,India,"India won by 6 wickets",Afghanistan,field
+M037,2024-09-13,T20,Asia Cup 2024,"Sharjah Cricket Stadium, Sharjah, UAE",Sri Lanka,Pakistan,Sri Lanka,"Sri Lanka won by 4 wickets",Pakistan,bat
+M038,2024-09-15,T20,Asia Cup 2024,"Dubai International Stadium, Dubai, UAE",Bangladesh,Nepal,Bangladesh,"Bangladesh won by 7 wickets",Nepal,field
+M039,2024-09-17,T20,Asia Cup 2024,"Dubai International Stadium, Dubai, UAE",India,Afghanistan,India,"India won by 5 wickets",Afghanistan,bat
+M040,2024-09-19,T20,Asia Cup 2024,"Sharjah Cricket Stadium, Sharjah, UAE",Sri Lanka,Bangladesh,Sri Lanka,"Sri Lanka won by 3 wickets",Bangladesh,field
+M041,2024-10-01,ODI,World Cup 2024,"Narendra Modi Stadium, Ahmedabad, India",India,Australia,Australia,"Australia won by 6 wickets",India,bat
+M042,2024-10-05,ODI,World Cup 2024,"M. Chinnaswamy Stadium, Bengaluru, India",England,South Africa,South Africa,"South Africa won by 4 wickets",England,field
+M043,2024-10-09,ODI,World Cup 2024,"Wankhede Stadium, Mumbai, India",New Zealand,Pakistan,New Zealand,"New Zealand won by 5 wickets",Pakistan,bat
+M044,2024-10-13,ODI,World Cup 2024,"Eden Gardens, Kolkata, India",Sri Lanka,Afghanistan,Afghanistan,"Afghanistan won by 3 wickets",Sri Lanka,field
+M045,2024-10-17,ODI,World Cup 2024,"M. A. Chidambaram Stadium, Chennai, India",Bangladesh,Netherlands,Bangladesh,"Bangladesh won by 7 wickets",Netherlands,bat
+M046,2024-10-21,ODI,World Cup 2024,"Rajiv Gandhi Stadium, Hyderabad, India",India,England,India,"India won by 8 wickets",England,field
+M047,2024-10-25,ODI,World Cup 2024,"Barsapara Stadium, Guwahati, India",Australia,South Africa,South Africa,"South Africa won by 4 wickets",Australia,bat
+M048,2024-10-29,ODI,World Cup 2024,"Dubai International Stadium, Dubai, UAE",New Zealand,Afghanistan,New Zealand,"New Zealand won by 6 wickets",Afghanistan,field
+M049,2024-11-02,ODI,World Cup 2024,"Wankhede Stadium, Mumbai, India",Pakistan,Bangladesh,Pakistan,"Pakistan won by 5 wickets",Bangladesh,bat
+M050,2024-11-05,ODI,World Cup 2024,"Narendra Modi Stadium, Ahmedabad, India",India,South Africa,India,"India won by 7 wickets",South Africa,field
