@@ -1,7 +1,0 @@
---- D:\miniproject\frontend\src\index.css
-+++ D:\miniproject\frontend\src\index.css
-@@ -4,2 +4,5 @@
-   @tailwind utilities;
- }
-+
-+.glass-card { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border-radius: 0.75rem; border: 1px solid rgba(30, 41, 59, 1); }
