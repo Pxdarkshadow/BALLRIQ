@@ -121,7 +121,7 @@ export default function MatchCenter({ language }) {
         setQaHistory(prev => [...prev, { sender: 'bot', ...data }]);
       }
     } catch (e) {
-      setQaHistory(prev => [...prev, { sender: 'bot', answer: 'Failed to connect to RAG server.', is_grounded: false, citations: [] }]);
+      setQaHistory(prev => [...prev, { sender: 'bot', answer: 'Failed to retrieve match answer.', is_grounded: false, citations: [] }]);
     } finally {
       setQaLoading(false);
     }
@@ -158,7 +158,7 @@ export default function MatchCenter({ language }) {
             <Play className="w-4 h-4 text-blue-400 fill-blue-400" />
             {language === 'hi' ? 'मैच सूची' : (language === 'mr' ? 'सामने यादी' : 'Matches')}
           </h2>
-          <span className="text-xs text-slate-500 font-mono">{matches.length} matches indexed</span>
+          <span className="text-xs text-slate-500 font-mono">{matches.length} matches available</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
@@ -241,7 +241,7 @@ export default function MatchCenter({ language }) {
                 { id: 'scorecard', icon: Award, label: 'Scorecard' },
                 { id: 'players', icon: Users, label: 'Players' },
                 { id: 'momentum', icon: Activity, label: 'Momentum' },
-                { id: 'bda-phase', icon: BarChart2, label: 'BDA Analytics' }
+                { id: 'bda-phase', icon: BarChart2, label: 'Phases' }
               ].map(tab => (
                 <button
                   key={tab.id}
@@ -442,7 +442,7 @@ export default function MatchCenter({ language }) {
             <div className="glass-card p-5 bg-slate-900/60 rounded-xl border border-slate-800 space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-bold text-slate-200 flex items-center gap-2">
-                  <BarChart2 className="w-4 h-4 text-emerald-400" /> Phase Analytics
+                  <BarChart2 className="w-4 h-4 text-emerald-400" /> Match Phases
                 </h3>
               </div>
               <div className="grid grid-cols-1 gap-3">
@@ -468,8 +468,8 @@ export default function MatchCenter({ language }) {
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-100">Ask BALLRIQ AI</h3>
-                  <p className="text-[11px] text-slate-400">Grounded Hybrid RAG</p>
+                  <h3 className="text-sm font-bold text-slate-100">Ask Match Assistant</h3>
+                  <p className="text-[11px] text-slate-400">Instant Match Insights</p>
                 </div>
               </div>
               <div className="mt-3">
@@ -485,7 +485,7 @@ export default function MatchCenter({ language }) {
                 {qaHistory.length === 0 ? (
                   <div className="text-center py-12 text-slate-500 text-xs">
                     <MessageSquare className="w-8 h-8 mx-auto mb-2 opacity-40 text-blue-400" />
-                    Ask natural language questions about players, overs, wickets, boundaries, or turning points in Hindi, Marathi, or English.
+                    Ask questions about players, overs, wickets, boundaries, or turning points in Hindi, Marathi, or English.
                   </div>
                 ) : (
                   qaHistory.map((msg, i) => (
@@ -505,7 +505,7 @@ export default function MatchCenter({ language }) {
                     </div>
                   ))
                 )}
-                {qaLoading && <div className="text-xs text-blue-400 flex items-center gap-2 p-2 bg-slate-800/40 rounded-lg"><Sparkles className="w-3.5 h-3.5 animate-spin" /> Retrieving...</div>}
+                {qaLoading && <div className="text-xs text-blue-400 flex items-center gap-2 p-2 bg-slate-800/40 rounded-lg"><Sparkles className="w-3.5 h-3.5 animate-spin" /> Searching match details...</div>}
               </div>
             </div>
             <div className="pt-3 border-t border-slate-800">

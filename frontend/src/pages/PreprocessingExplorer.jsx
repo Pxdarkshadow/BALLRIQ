@@ -47,17 +47,17 @@ export default function PreprocessingExplorer({ language }) {
           <div className="p-2 bg-indigo-600/20 text-indigo-400 rounded-lg border border-indigo-500/30">
             <Sparkles className="w-5 h-5" />
           </div>
-          <h1 className="text-xl font-black text-white tracking-tight">Multilingual NLP Preprocessing Pipeline</h1>
+          <h1 className="text-xl font-black text-white tracking-tight">Match Text & Commentary Formatter</h1>
         </div>
         <p className="text-xs text-slate-400">
-          Trace every granular string transformation step: Unicode normalization, text cleaning, language ID, number normalization, cricket terminology, player aliases, and tokenization.
+          Trace how commentary text is prepared: text cleaning, language detection, number formatting, cricket terminology, player name standardization, and words.
         </p>
       </div>
 
       {/* Interactive Input Section */}
       <div className="glass-card p-6 border-slate-800 space-y-4">
         <div className="flex flex-wrap gap-2 items-center justify-between">
-          <span className="text-xs font-bold text-slate-300">Preset Academic Test Samples:</span>
+          <span className="text-xs font-bold text-slate-300">Sample Commentary Lines:</span>
           <div className="flex flex-wrap gap-2">
             {sampleInputs.map((sample, i) => (
               <button
@@ -79,7 +79,7 @@ export default function PreprocessingExplorer({ language }) {
             type="text"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
-            placeholder="Type raw cricket commentary in Hindi, Marathi, or English..."
+            placeholder="Type cricket commentary in Hindi, Marathi, or English..."
             className="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500"
           />
           <button
@@ -88,7 +88,7 @@ export default function PreprocessingExplorer({ language }) {
             className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white font-bold text-xs rounded-xl flex items-center gap-2 shadow-lg shadow-indigo-600/20 transition-all"
           >
             {loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
-            Transform Pipeline
+            Format Notes
           </button>
         </div>
       </div>
@@ -99,7 +99,7 @@ export default function PreprocessingExplorer({ language }) {
           {/* Left 2 Cols: Step Breakdown */}
           <div className="lg:col-span-2 space-y-4">
             <h2 className="text-sm font-bold text-slate-200 uppercase tracking-wider">
-              Step-by-Step Pipeline Execution ({result.steps?.length || 7} Steps)
+              Step-by-Step Text Formatting ({result.steps?.length || 7} Steps)
             </h2>
 
             <div className="space-y-3">
@@ -112,7 +112,7 @@ export default function PreprocessingExplorer({ language }) {
                       </span>
                       {step.step_name?.replace(/_/g, ' ').toUpperCase()}
                     </span>
-                    <span className="text-[10px] text-slate-500 uppercase font-mono">{step.operation || 'Transformation'}</span>
+                    <span className="text-[10px] text-slate-500 uppercase font-mono">{step.operation || 'Formatted'}</span>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs pt-1">
@@ -121,7 +121,7 @@ export default function PreprocessingExplorer({ language }) {
                       <p className="text-slate-400 font-mono break-all">{step.input_text || result.original_text}</p>
                     </div>
                     <div className="p-2.5 bg-indigo-950/20 rounded-lg border border-indigo-800/40">
-                      <span className="text-[10px] text-indigo-400 font-bold block mb-1 uppercase">Transformed Output</span>
+                      <span className="text-[10px] text-indigo-400 font-bold block mb-1 uppercase">Formatted Text</span>
                       <p className="text-indigo-200 font-mono font-semibold break-all">{step.output_text || result.final_text}</p>
                     </div>
                   </div>
@@ -134,7 +134,7 @@ export default function PreprocessingExplorer({ language }) {
           <div className="space-y-4">
             <div className="glass-card p-5 border-slate-800 space-y-4">
               <h3 className="text-sm font-bold text-slate-100 flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Pipeline Inspection Metadata
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Commentary Summary & Details
               </h3>
 
               <div className="space-y-3 text-xs">
@@ -145,12 +145,12 @@ export default function PreprocessingExplorer({ language }) {
                 </div>
 
                 <div className="p-3 bg-slate-900/80 rounded-lg border border-slate-800 space-y-1">
-                  <span className="text-slate-400 font-medium">Final Normalized Representation:</span>
+                  <span className="text-slate-400 font-medium">Standardized Commentary:</span>
                   <p className="text-emerald-400 font-mono font-bold break-all">{result.final_text}</p>
                 </div>
 
                 <div className="p-3 bg-slate-900/80 rounded-lg border border-slate-800 space-y-2">
-                  <span className="text-slate-400 font-medium">Tokenized Output Array ({result.tokens?.length || 0}):</span>
+                  <span className="text-slate-400 font-medium">Identified Cricket Terms ({result.tokens?.length || 0}):</span>
                   <div className="flex flex-wrap gap-1">
                     {result.tokens?.map((t, i) => (
                       <span key={i} className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-200 font-mono text-[11px]">

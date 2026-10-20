@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import MatchCenter from './pages/MatchCenter';
-import DatasetExplorer from './pages/DatasetExplorer';
-import PreprocessingExplorer from './pages/PreprocessingExplorer';
-import NLPExplorer from './pages/NLPExplorer';
-import BDAExplorer from './pages/BDAExplorer';
-import IRExplorer from './pages/IRExplorer';
-import EvaluationDashboard from './pages/EvaluationDashboard';
+import NewsExplorer from './pages/DatasetExplorer';
+import TeamsExplorer from './pages/PreprocessingExplorer';
+import PlayersExplorer from './pages/NLPExplorer';
+import LeaguesExplorer from './pages/BDAExplorer';
+import StatsExplorer from './pages/IRExplorer';
+import MoreExplorer from './pages/EvaluationDashboard';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('matches');
@@ -40,28 +40,16 @@ export default function App() {
           onSearch={handleSearch}
         />
 
-        <main>
+        <main className="flex-1 overflow-hidden">
           {activeTab === 'matches' && <MatchCenter language={language} />}
-          {activeTab === 'dataset' && <DatasetExplorer language={language} />}
-          {activeTab === 'preprocessing' && <PreprocessingExplorer language={language} />}
-          {activeTab === 'nlp' && <NLPExplorer language={language} />}
-          {activeTab === 'bda' && <BDAExplorer language={language} />}
-          {activeTab === 'ir' && <IRExplorer language={language} />}
-          {activeTab === 'eval' && <EvaluationDashboard language={language} />}
+          {activeTab === 'dataset' && <NewsExplorer language={language} />}
+          {activeTab === 'preprocessing' && <TeamsExplorer language={language} />}
+          {activeTab === 'nlp' && <PlayersExplorer language={language} />}
+          {activeTab === 'bda' && <LeaguesExplorer language={language} />}
+          {activeTab === 'ir' && <StatsExplorer language={language} />}
+          {activeTab === 'eval' && <MoreExplorer language={language} />}
         </main>
       </div>
-
-      {/* Footer */}
-      <footer className={`border-t py-6 mt-12 text-center text-xs ${theme === 'dark' ? 'border-slate-800/80 bg-slate-950/60 text-slate-500' : 'border-slate-200 bg-white/60 text-slate-500'}`}>
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <div>
-            <span className={`font-bold ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>BALLRIQ</span> • Multilingual Cricket Intelligence & Big Data Platform
-          </div>
-          <div className="font-mono text-[11px]">
-            PySpark • DuckDB • Parquet • XLM-R • BM25 • FAISS • Hybrid RAG
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

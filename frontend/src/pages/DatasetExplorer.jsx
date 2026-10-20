@@ -36,19 +36,19 @@ export default function DatasetExplorer({ language }) {
     commentary: [
       { field: 'commentary_id', type: 'VARCHAR (PK)', desc: 'Unique commentary ball ID (e.g. M001_C_018)' },
       { field: 'match_id', type: 'VARCHAR (FK)', desc: 'Reference to parent match' },
-      { field: 'language', type: 'VARCHAR', desc: 'Language tag (hi, mr, en, code_mixed)' },
-      { field: 'original_text', type: 'TEXT', desc: 'Raw multilingual natural commentary transcript' },
-      { field: 'normalized_text', type: 'TEXT', desc: 'Preprocessed text with normalized entities and tokens' },
+      { field: 'language', type: 'VARCHAR', desc: 'Language tag (hi, mr, en, mixed)' },
+      { field: 'original_text', type: 'TEXT', desc: 'Live multilingual commentary transcript' },
+      { field: 'normalized_text', type: 'TEXT', desc: 'Cleaned text with standardized entities' },
       { field: 'over', type: 'INTEGER', desc: 'Match over number (0-19)' },
       { field: 'ball', type: 'INTEGER', desc: 'Ball number within over (1-6)' },
-      { field: 'event_label', type: 'VARCHAR', desc: 'Ground-truth event class (FOUR, SIX, WICKET, etc.)' }
+      { field: 'event_label', type: 'VARCHAR', desc: 'Play event class (FOUR, SIX, WICKET, etc.)' }
     ],
     audio: [
       { field: 'audio_id', type: 'VARCHAR (PK)', desc: 'Audio snippet identifier' },
       { field: 'match_id', type: 'VARCHAR (FK)', desc: 'Parent match reference' },
       { field: 'language', type: 'VARCHAR', desc: 'Spoken language (Hindi / Marathi)' },
       { field: 'duration_sec', type: 'FLOAT', desc: 'Duration of commentary audio clip' },
-      { field: 'transcript', type: 'TEXT', desc: 'Speech-to-text transcription ground truth' }
+      { field: 'transcript', type: 'TEXT', desc: 'Speech-to-text commentary transcription' }
     ]
   };
 
@@ -60,37 +60,37 @@ export default function DatasetExplorer({ language }) {
           <div className="p-2 bg-blue-600/20 text-blue-400 rounded-lg border border-blue-500/30">
             <Database className="w-5 h-5" />
           </div>
-          <h1 className="text-xl font-black text-white tracking-tight">BALLRIQ Academic Dataset Explorer</h1>
+          <h1 className="text-xl font-black text-white tracking-tight">Match Center News & Coverage Database</h1>
         </div>
         <p className="text-xs text-slate-400">
-          Comprehensive multi-tiered dataset documentation: Structured Match Data, Multilingual Commentary (Hindi/Marathi/English), and Audio Transcripts.
+          Comprehensive match records and coverage: Match scores, multilingual commentary (Hindi/Marathi/English), and audio transcripts.
         </p>
       </div>
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="glass-card p-5 border-slate-800 space-y-1">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Total Commentary Records</span>
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Total Commentary Entries</span>
           <div className="text-3xl font-extrabold text-white font-mono">13,423</div>
           <div className="text-[11px] text-emerald-400 font-medium flex items-center gap-1">
-            <CheckCircle2 className="w-3 h-3" /> 100% Quality Validated
+            <CheckCircle2 className="w-3 h-3" /> Verified Match Data
           </div>
         </div>
 
         <div className="glass-card p-5 border-slate-800 space-y-1">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Multilingual Distribution</span>
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Commentary Languages</span>
           <div className="text-3xl font-extrabold text-blue-400 font-mono">3 Languages</div>
           <div className="text-[11px] text-slate-400 font-medium">5K Hindi • 5K Marathi • 3.4K English</div>
         </div>
 
         <div className="glass-card p-5 border-slate-800 space-y-1">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Structured Matches</span>
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Archived Matches</span>
           <div className="text-3xl font-extrabold text-purple-400 font-mono">50 Matches</div>
           <div className="text-[11px] text-slate-400 font-medium">T20, ODI & Test Series</div>
         </div>
 
         <div className="glass-card p-5 border-slate-800 space-y-1">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Classification Classes</span>
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Play Event Types</span>
           <div className="text-3xl font-extrabold text-amber-400 font-mono">12 Classes</div>
           <div className="text-[11px] text-slate-400 font-medium">FOUR, SIX, WICKET, DOT, etc.</div>
         </div>
@@ -126,7 +126,7 @@ export default function DatasetExplorer({ language }) {
 
             <div>
               <div className="flex justify-between mb-1 text-slate-300 font-medium">
-                <span>English (Cross-lingual Baseline)</span>
+                <span>English (Commentary)</span>
                 <span className="font-mono text-emerald-400 font-bold">3,423 records (25.6%)</span>
               </div>
               <div className="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
@@ -139,7 +139,7 @@ export default function DatasetExplorer({ language }) {
         {/* Event Class Distribution */}
         <div className="glass-card p-6 border-slate-800 space-y-4">
           <h2 className="text-sm font-bold text-slate-200 flex items-center gap-2">
-            <Layers className="w-4 h-4 text-purple-400" /> Event Class Distribution (NLP Dataset)
+            <Layers className="w-4 h-4 text-purple-400" /> Match Event Distribution
           </h2>
           <div className="grid grid-cols-2 gap-2 text-xs font-mono">
             <div className="p-2.5 bg-slate-900/60 rounded-lg border border-slate-800 flex justify-between">
@@ -174,7 +174,7 @@ export default function DatasetExplorer({ language }) {
       <div className="glass-card p-6 border-slate-800 space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-bold text-slate-200 flex items-center gap-2">
-            <FileText className="w-4 h-4 text-emerald-400" /> Relational & Lakehouse Schemas
+            <FileText className="w-4 h-4 text-emerald-400" /> Match Data Structure & Fields
           </h2>
           <div className="flex space-x-1 bg-slate-800/80 p-1 rounded-lg border border-slate-700/60 text-xs">
             <button
@@ -183,7 +183,7 @@ export default function DatasetExplorer({ language }) {
                 activeSchemaTab === 'commentary' ? 'bg-blue-600 text-white font-bold' : 'text-slate-400 hover:text-slate-200'
               }`}
             >
-              Dataset B: Commentary
+              Ball-by-Ball Commentary
             </button>
             <button
               onClick={() => setActiveSchemaTab('matches')}
@@ -191,7 +191,7 @@ export default function DatasetExplorer({ language }) {
                 activeSchemaTab === 'matches' ? 'bg-blue-600 text-white font-bold' : 'text-slate-400 hover:text-slate-200'
               }`}
             >
-              Dataset A: Matches
+              Match Details
             </button>
             <button
               onClick={() => setActiveSchemaTab('audio')}
@@ -199,7 +199,7 @@ export default function DatasetExplorer({ language }) {
                 activeSchemaTab === 'audio' ? 'bg-blue-600 text-white font-bold' : 'text-slate-400 hover:text-slate-200'
               }`}
             >
-              Dataset C: Audio
+              Audio Highlights
             </button>
           </div>
         </div>
@@ -210,7 +210,7 @@ export default function DatasetExplorer({ language }) {
               <tr>
                 <th className="py-3 px-4 font-bold">Field Name</th>
                 <th className="py-3 px-4 font-bold">Data Type</th>
-                <th className="py-3 px-4 font-bold">Description & Academic Purpose</th>
+                <th className="py-3 px-4 font-bold">Description & Details</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800 font-sans">

@@ -53,17 +53,17 @@ export default function IRExplorer({ language }) {
           <div className="p-2 bg-blue-600/20 text-blue-400 rounded-lg border border-blue-500/30">
             <Search className="w-5 h-5" />
           </div>
-          <h1 className="text-xl font-black text-white tracking-tight">Information Retrieval (IR) 4-Way Comparison Engine</h1>
+          <h1 className="text-xl font-black text-white tracking-tight">Cricket Stats & Commentary Search Engine</h1>
         </div>
         <p className="text-xs text-slate-400">
-          Side-by-side benchmarking of <strong>TF-IDF</strong>, <strong>BM25 Okapi</strong>, <strong>Semantic Vector Search</strong>, and <strong>Hybrid Fusion</strong> over 15,000+ multilingual cricket documents.
+          Search across 15,000+ multilingual cricket moments using keyword, context-aware, and combined search options.
         </p>
       </div>
 
       {/* Query Bar */}
       <div className="glass-card p-6 border-slate-800 space-y-4">
         <div className="flex flex-wrap gap-2 items-center justify-between">
-          <span className="text-xs font-bold text-slate-300">Preset Cross-Lingual Academic Queries:</span>
+          <span className="text-xs font-bold text-slate-300">Sample Match Search Queries:</span>
           <div className="flex flex-wrap gap-2">
             {sampleQueries.map((sq, i) => (
               <button
@@ -94,7 +94,7 @@ export default function IRExplorer({ language }) {
             className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white font-bold text-xs rounded-xl flex items-center gap-2 shadow-lg shadow-blue-600/20 transition-all"
           >
             {loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
-            Execute 4-Way IR
+            Search Moments
           </button>
         </div>
       </div>
@@ -106,8 +106,8 @@ export default function IRExplorer({ language }) {
           <div className="glass-card p-4 border-slate-800 space-y-3 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-slate-800 pb-2.5 mb-3">
-                <span className="text-xs font-bold text-slate-300">TF-IDF Vector Space</span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono">Lexical Baseline</span>
+                <span className="text-xs font-bold text-slate-300">Keyword Match Search</span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono">Keyword Match</span>
               </div>
               <div className="space-y-2.5">
                 {comparison.methods?.tfidf?.results?.map((doc, idx) => (
@@ -128,8 +128,8 @@ export default function IRExplorer({ language }) {
           <div className="glass-card p-4 border-slate-800 space-y-3 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-slate-800 pb-2.5 mb-3">
-                <span className="text-xs font-bold text-blue-300">BM25 Okapi</span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 font-mono">Probabilistic</span>
+                <span className="text-xs font-bold text-blue-300">Relevance Search</span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 font-mono">High Relevance</span>
               </div>
               <div className="space-y-2.5">
                 {comparison.methods?.bm25?.results?.map((doc, idx) => (
@@ -150,8 +150,8 @@ export default function IRExplorer({ language }) {
           <div className="glass-card p-4 border-slate-800 space-y-3 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-slate-800 pb-2.5 mb-3">
-                <span className="text-xs font-bold text-purple-300">Semantic Vector Search</span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-400 font-mono">Dense Embeddings</span>
+                <span className="text-xs font-bold text-purple-300">Contextual / Meaning Search</span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-400 font-mono">Context Aware</span>
               </div>
               <div className="space-y-2.5">
                 {comparison.methods?.semantic?.results?.map((doc, idx) => (
@@ -172,8 +172,8 @@ export default function IRExplorer({ language }) {
           <div className="glass-card p-4 border-slate-800 space-y-3 flex flex-col justify-between bg-blue-950/10 border-blue-500/40">
             <div>
               <div className="flex items-center justify-between border-b border-slate-800 pb-2.5 mb-3">
-                <span className="text-xs font-bold text-emerald-400">Hybrid Fusion (α=0.5)</span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">Recommended</span>
+                <span className="text-xs font-bold text-emerald-400">Combined Smart Search</span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">Top Recommended</span>
               </div>
               <div className="space-y-2.5">
                 {comparison.methods?.hybrid?.results?.map((doc, idx) => (

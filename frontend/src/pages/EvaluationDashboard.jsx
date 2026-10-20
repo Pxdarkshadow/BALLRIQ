@@ -40,10 +40,10 @@ export default function EvaluationDashboard({ language }) {
           <div className="p-2 bg-emerald-600/20 text-emerald-400 rounded-lg border border-emerald-500/30">
             <Award className="w-5 h-5" />
           </div>
-          <h1 className="text-xl font-black text-white tracking-tight">Academic Evaluation & Benchmark Suite</h1>
+          <h1 className="text-xl font-black text-white tracking-tight">Model Accuracy & Performance Benchmarks</h1>
         </div>
         <p className="text-xs text-slate-400">
-          Comprehensive empirical validation of Natural Language Processing (NLP) classifiers, Information Retrieval (IR) ranking schemes, and Dataset Quality.
+          Performance benchmarks for match event recognition, stats search methods, and commentary data quality.
         </p>
       </div>
 
@@ -51,7 +51,7 @@ export default function EvaluationDashboard({ language }) {
       <div className="glass-card p-6 border-slate-800 space-y-4">
         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
           <h2 className="text-sm font-bold text-slate-200 flex items-center gap-2">
-            <Cpu className="w-4 h-4 text-purple-400" /> NLP Model Comparison: Baseline vs Deep Transformer
+            <Cpu className="w-4 h-4 text-purple-400" /> Event Tagging Accuracy: Fast Classifier vs Advanced Multilingual
           </h2>
           <span className="text-[11px] text-slate-400 font-mono">Test Set: 1,989 Commentary Samples</span>
         </div>
@@ -60,7 +60,7 @@ export default function EvaluationDashboard({ language }) {
           <table className="w-full text-xs text-left">
             <thead className="text-[11px] uppercase bg-slate-800/80 text-slate-400 font-mono">
               <tr>
-                <th className="py-3 px-4 font-sans font-bold">Model Architecture</th>
+                <th className="py-3 px-4 font-sans font-bold">Model System</th>
                 <th className="py-3 px-3">Type</th>
                 <th className="py-3 px-3 text-right">Accuracy</th>
                 <th className="py-3 px-3 text-right">Precision</th>
@@ -90,16 +90,16 @@ export default function EvaluationDashboard({ language }) {
       <div className="glass-card p-6 border-slate-800 space-y-4">
         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
           <h2 className="text-sm font-bold text-slate-200 flex items-center gap-2">
-            <Search className="w-4 h-4 text-blue-400" /> Information Retrieval (IR) Benchmarking Matrix
+            <Search className="w-4 h-4 text-blue-400" /> Search Methods Performance Matrix
           </h2>
-          <span className="text-[11px] text-slate-400 font-mono">15,338 Indexed Documents • 10 Ground-Truth Queries</span>
+          <span className="text-[11px] text-slate-400 font-mono">15,338 Indexed Moments • 10 Benchmark Queries</span>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left">
             <thead className="text-[11px] uppercase bg-slate-800/80 text-slate-400 font-mono">
               <tr>
-                <th className="py-3 px-4 font-sans font-bold">Retrieval Algorithm</th>
+                <th className="py-3 px-4 font-sans font-bold">Search Method</th>
                 <th className="py-3 px-3 text-right">Precision@5</th>
                 <th className="py-3 px-3 text-right">Recall@5</th>
                 <th className="py-3 px-3 text-right">MRR (Mean Reciprocal Rank)</th>
@@ -150,10 +150,10 @@ export default function EvaluationDashboard({ language }) {
 
         <div className="glass-card p-5 border-slate-800 space-y-3">
           <h3 className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
-            <TrendingUp className="w-4 h-4 text-blue-400" /> Academic Findings & Summary
+            <TrendingUp className="w-4 h-4 text-blue-400" /> Performance Summary & Findings
           </h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Empirical results prove that <strong>Hybrid Fusion Retrieval ($\alpha=0.5$)</strong> outperforms pure lexical BM25 and TF-IDF in capturing cross-lingual synonyms in Hindi and Marathi while maintaining high precision. Furthermore, deep multilingual embeddings resolve colloquial slang and code-mixing.
+            Testing confirms that <strong>Combined Smart Search</strong> consistently outperforms basic keyword matching in capturing cross-lingual phrases in Hindi and Marathi while maintaining high accuracy. Furthermore, contextual models understand colloquial cricket terms and mixed languages.
           </p>
         </div>
       </div>

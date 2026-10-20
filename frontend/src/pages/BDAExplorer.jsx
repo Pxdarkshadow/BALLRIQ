@@ -86,44 +86,44 @@ export default function BDAExplorer({ language }) {
           <div className="p-2 bg-emerald-600/20 text-emerald-400 rounded-lg border border-emerald-500/30">
             <BarChart3 className="w-5 h-5" />
           </div>
-          <h1 className="text-xl font-black text-white tracking-tight">Big Data Analytics (BDA) Lakehouse & OLAP Engine</h1>
+          <h1 className="text-xl font-black text-white tracking-tight">Match Stats & Performance Analytics Hub</h1>
         </div>
         <p className="text-xs text-slate-400">
-          High-performance analytical processing using <strong>Apache Parquet Columnar Lakehouse</strong>, <strong>DuckDB Embedded OLAP Engine</strong>, and <strong>Streaming Analytics Simulation</strong>.
+          Instant statistical processing of match records, player numbers, and live momentum trends.
         </p>
       </div>
 
       {/* Lakehouse Overview KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="glass-card p-5 border-slate-800 space-y-1">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Lakehouse Storage</span>
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Data Store</span>
           <div className="text-2xl font-black text-emerald-400 font-mono">Apache Parquet</div>
-          <div className="text-[11px] text-slate-400 font-medium">Snappy Compressed Partitioned Lake</div>
+          <div className="text-[11px] text-slate-400 font-medium">Optimized Match Records Store</div>
         </div>
 
         <div className="glass-card p-5 border-slate-800 space-y-1">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">OLAP Query Engine</span>
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Analytics Engine</span>
           <div className="text-2xl font-black text-blue-400 font-mono">DuckDB In-Memory</div>
-          <div className="text-[11px] text-slate-400 font-medium">Sub-20ms Columnar Aggregations</div>
+          <div className="text-[11px] text-slate-400 font-medium">Fast Stats Aggregations</div>
         </div>
 
         <div className="glass-card p-5 border-slate-800 space-y-1">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Total Lake Size</span>
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Total Stats Size</span>
           <div className="text-2xl font-black text-purple-400 font-mono">{lakeSummary?.total_size_mb || 0.66} MB</div>
           <div className="text-[11px] text-emerald-400 font-medium">92% Space Compression over CSV</div>
         </div>
 
         <div className="glass-card p-5 border-slate-800 space-y-1">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Stream Simulator</span>
-          <div className="text-2xl font-black text-amber-400 font-mono">Active Window</div>
-          <div className="text-[11px] text-slate-400 font-medium">30-Ball Sliding Momentum Window</div>
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Live Momentum Engine</span>
+          <div className="text-2xl font-black text-amber-400 font-mono">Active Match Window</div>
+          <div className="text-[11px] text-slate-400 font-medium">Last 30 Balls Momentum</div>
         </div>
       </div>
 
       {/* Section 1: Lakehouse Tables & Parquet Partitions */}
       <div className="glass-card p-6 border-slate-800 space-y-4">
         <h2 className="text-sm font-bold text-slate-200 flex items-center gap-2">
-          <Layers className="w-4 h-4 text-emerald-400" /> Parquet Lakehouse Tables & Partitioning Metadata
+          <Layers className="w-4 h-4 text-emerald-400" /> League & Match Data Tables
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {lakeSummary?.tables?.map((tbl, i) => (
@@ -147,7 +147,7 @@ export default function BDAExplorer({ language }) {
         <div className="glass-card p-6 border-slate-800 space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-bold text-slate-200 flex items-center gap-2">
-              <Activity className="w-4 h-4 text-amber-400" /> Ball-by-Ball Streaming Simulation (Sliding-Window Metrics)
+              <Activity className="w-4 h-4 text-amber-400" /> Live Over-by-Over Match Momentum Tracker
             </h2>
             <span className="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30 font-bold uppercase">
               Momentum: {streamingData.latest_metrics?.momentum || 'Balanced'}
@@ -179,7 +179,7 @@ export default function BDAExplorer({ language }) {
       <div className="glass-card p-6 border-slate-800 space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-bold text-slate-200 flex items-center gap-2">
-            <Terminal className="w-4 h-4 text-purple-400" /> Interactive DuckDB SQL Analytics Console
+            <Terminal className="w-4 h-4 text-purple-400" /> Interactive Match Stats Query Console
           </h2>
           <span className="text-[11px] text-slate-400 font-mono">Tables: matches, commentary, ball_events, batting_stats, bowling_stats</span>
         </div>

@@ -22,9 +22,11 @@ class BALLRIQRAGEngine:
                         language: str = "auto") -> Dict[str, Any]:
         lang = self._language(question, language)
         _, _, _, hybrid = get_ir_components()
-        retrieved_docs = hybrid.search(question, top_k=6, alpha=0.5)
+        search_k = 100 if match_id else 6
+        retrieved_docs = hybrid.search(question, top_k=search_k, alpha=0.5)
         if match_id:
-            retrieved_docs = [doc for doc in retrieved_docs if doc.get("match_id") == match_id]
+            match_docs = [doc for doc in retrieved_docs if doc.get("match_id") == match_id]
+            retrieved_docs = match_docs if match_docs else retrieved_docs[:6]
 
         citations = self._citations(retrieved_docs[:4])
         if not retrieved_docs or retrieved_docs[0].get("score", 0) < 0.05:

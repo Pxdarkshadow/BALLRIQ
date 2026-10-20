@@ -61,17 +61,17 @@ export default function NLPExplorer({ language }) {
           <div className="p-2 bg-purple-600/20 text-purple-400 rounded-lg border border-purple-500/30">
             <Cpu className="w-5 h-5" />
           </div>
-          <h1 className="text-xl font-black text-white tracking-tight">NLP Event Classification & Entity Extraction</h1>
+          <h1 className="text-xl font-black text-white tracking-tight">Player & Play Highlights Extraction</h1>
         </div>
         <p className="text-xs text-slate-400">
-          Academic demonstration of Machine Learning Event Classification (TF-IDF + Logistic Regression / XLM-R) and Rule-based Structured Cricket Information Extraction.
+          Automatic event recognition and player mention tracking from live match commentary.
         </p>
       </div>
 
       {/* Input Console */}
       <div className="glass-card p-6 border-slate-800 space-y-4">
         <div className="flex flex-wrap gap-2 items-center justify-between">
-          <span className="text-xs font-bold text-slate-300">Preset Academic Test Sentences:</span>
+          <span className="text-xs font-bold text-slate-300">Sample Commentary Highlights:</span>
           <div className="flex flex-wrap gap-2">
             {samples.map((s, i) => (
               <button
@@ -102,7 +102,7 @@ export default function NLPExplorer({ language }) {
             className="px-5 py-2.5 bg-purple-600 hover:bg-purple-500 disabled:opacity-50 text-white font-bold text-xs rounded-xl flex items-center gap-2 shadow-lg shadow-purple-600/20 transition-all"
           >
             {loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4" />}
-            Analyze NLP
+            Analyze Play
           </button>
         </div>
       </div>
@@ -113,16 +113,16 @@ export default function NLPExplorer({ language }) {
         <div className="glass-card p-6 border-slate-800 space-y-5">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <h2 className="text-sm font-bold text-slate-200 flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" /> Predicted Cricket Event
+              <ShieldCheck className="w-4 h-4 text-emerald-400" /> Identified Match Event
             </h2>
-            <span className="text-[11px] text-slate-400 font-mono">Model: Multiclass Event Classifier</span>
+            <span className="text-[11px] text-slate-400 font-mono">Match Event Tagger</span>
           </div>
 
           {prediction && (
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 bg-slate-900/80 rounded-xl border border-slate-800">
                 <div>
-                  <span className="text-xs text-slate-400 font-bold block mb-1">PREDICTED EVENT CLASS</span>
+                  <span className="text-xs text-slate-400 font-bold block mb-1">MATCH EVENT</span>
                   <div className="text-2xl font-black text-purple-400 font-mono tracking-wide">{prediction.predicted_event}</div>
                 </div>
                 <div className="text-right">
@@ -135,7 +135,7 @@ export default function NLPExplorer({ language }) {
 
               {/* All Probabilities Bar Chart */}
               <div className="space-y-2">
-                <span className="text-xs font-bold text-slate-300 block">Class Probability Distribution:</span>
+                <span className="text-xs font-bold text-slate-300 block">Event Probability Distribution:</span>
                 <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
                   {prediction.all_probabilities && Object.entries(prediction.all_probabilities)
                     .sort(([, a], [, b]) => b - a)
@@ -164,19 +164,19 @@ export default function NLPExplorer({ language }) {
         <div className="glass-card p-6 border-slate-800 space-y-5">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <h2 className="text-sm font-bold text-slate-200 flex items-center gap-2">
-              <Tag className="w-4 h-4 text-blue-400" /> Extracted Entities & Structure
+              <Tag className="w-4 h-4 text-blue-400" /> Player Mentions & Play Details
             </h2>
-            <span className="text-[11px] text-slate-400 font-mono">Rule + Dictionary Parser</span>
+            <span className="text-[11px] text-slate-400 font-mono">Player & Play Parser</span>
           </div>
 
           {entities && (
             <div className="space-y-4 text-xs">
               {/* Entity Tags */}
               <div className="space-y-2">
-                <span className="text-slate-400 font-bold block">Identified Entity Tokens:</span>
+                <span className="text-slate-400 font-bold block">Identified Players & Match Roles:</span>
                 <div className="flex flex-wrap gap-1.5">
                   {(entities.entities || []).length === 0 ? (
-                    <span className="text-slate-500 italic">No specific entity mentions extracted.</span>
+                    <span className="text-slate-500 italic">No specific player mentions extracted.</span>
                   ) : (
                     entities.entities.map((ent, idx) => (
                       <span key={idx} className="px-2.5 py-1 rounded-md bg-blue-950/40 border border-blue-800/60 text-blue-300 font-medium">
@@ -189,7 +189,7 @@ export default function NLPExplorer({ language }) {
 
               {/* Structured JSON Event Representation */}
               <div className="space-y-1.5">
-                <span className="text-slate-400 font-bold block">Structured Knowledge Representation:</span>
+                <span className="text-slate-400 font-bold block">Structured Play Summary:</span>
                 <pre className="p-3 bg-slate-900 rounded-lg border border-slate-800 font-mono text-[11px] text-emerald-400 overflow-x-auto">
                   {JSON.stringify(entities.structured_event || {
                     event: prediction?.predicted_event || "FOUR",

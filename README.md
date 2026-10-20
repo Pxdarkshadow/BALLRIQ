@@ -15,6 +15,7 @@ The project is designed for English, Hindi, Marathi, and selected code-mixed cri
 - **Evaluation Dashboard** — View dataset, preprocessing, NLP, and IR reports when generated reports are available.
 - **Grounded RAG** — Retrieve commentary evidence first, then answer questions from that evidence with citations. An optional OpenAI-compatible provider can generate the answer; otherwise a deterministic evidence synthesis is returned.
 - **Audio analysis** — Analyze an explicitly supplied transcript. Acoustic speech-to-text is not installed by default.
+<<<<<<< HEAD
 =======
 BALLRIQ is a developer-oriented demo for exploring multilingual cricket commentary. It combines text preprocessing, event and entity extraction, information retrieval, retrieval-backed question answering, match data, and analytics in one React and FastAPI application. Hindi, Marathi, English, and selected code-mixed commentary are in scope.
 
@@ -35,11 +36,16 @@ BALLRIQ is a developer-oriented demo for exploring multilingual cricket commenta
 4. IR searches prepared documents using lexical, semantic, or hybrid strategies, depending on available index assets.
 5. RAG uses hybrid retrieval and returns source references with its answer; semantic index is required for RAG and method comparison.
 6. Match records are stored in SQLite; analytical queries use generated Parquet files through DuckDB.
+=======
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 
 ## Architecture
 
 ```text
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 ┌──────────────────────┐       /api/*        ┌─────────────────────────┐
 │ React 19 + Vite UI   │ ──────────────────> │ FastAPI application      │
 │ frontend/src/        │                     │ backend/app/             │
@@ -111,6 +117,7 @@ reports/                  Generated data-quality, NLP, and IR reports
 docs/                     Architecture, methodology, dataset, and annotation docs
 requirements.txt          Python dependencies
 frontend/package.json     JavaScript dependencies and Vite commands
+<<<<<<< HEAD
 =======
 backend/app/       FastAPI routes and NLP, IR, RAG, database, BDA modules
 backend/tests/     Backend tests
@@ -120,6 +127,8 @@ data/              Raw inputs and generated local data
 models/            Optional trained models and retrieval indexes
 docs/              Architecture, methodology, and dataset documentation
 >>>>>>> ef74100db53296feb09a213ac4fcb0a2d664dcbc
+=======
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 ```
 
 ## Prerequisites
@@ -138,6 +147,7 @@ Run commands from the repository root.
 ### 1. Install backend dependencies
 
 PowerShell:
+<<<<<<< HEAD
 =======
 - Python with versions supported by dependencies in `requirements.txt`
 - Node.js and npm compatible with the Vite version in `frontend/package.json`
@@ -150,6 +160,8 @@ The repository may not include the data, trained models, semantic indexes, or Pa
 Run commands from the repository root unless noted. On Windows PowerShell:
 
 ### 1. Install Python dependencies and seed local database
+=======
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 
 ```powershell
 python -m venv .venv
@@ -206,6 +218,7 @@ The seeder expects raw files under `data/raw/`, including match CSV files, `comm
 
 In the same terminal, from repository root:
 
+<<<<<<< HEAD
 ```powershell
 python -m uvicorn backend.app.main:app --reload
 ```
@@ -217,6 +230,8 @@ Interactive API docs: `http://localhost:8000/docs`
 
 Open a second terminal:
 
+=======
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 ```bash
 cd frontend
 npm ci
@@ -224,9 +239,12 @@ npm run dev
 ```
 
 Open the Vite URL, normally `http://localhost:5173`. Vite proxies `/api` requests to `http://127.0.0.1:8000` as configured in `frontend/vite.config.js`.
+<<<<<<< HEAD
 =======
 Open the Vite URL shown in the terminal, usually `http://localhost:5173`.
 >>>>>>> ef74100db53296feb09a213ac4fcb0a2d664dcbc
+=======
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 
 Production frontend build:
 
@@ -237,6 +255,7 @@ npm run preview
 ```
 
 ## Data and model pipeline
+<<<<<<< HEAD
 =======
 ## Data and model preparation
 
@@ -261,6 +280,9 @@ For LLM-backed RAG, the engine reads `OPENAI_API_KEY`, `OPENAI_MODEL`, and optio
 
 From the repository root:
 
+=======
+
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 The intended data flow is:
 
 ```text
@@ -388,6 +410,7 @@ python -m pytest
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Build the frontend:
 
 ```bash
@@ -397,11 +420,20 @@ Build the frontend from `frontend/`:
 
 ```powershell
 >>>>>>> ef74100db53296feb09a213ac4fcb0a2d664dcbc
+=======
+Build the frontend:
+
+```bash
+cd frontend
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 npm ci
 npm run build
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 For a focused API smoke check after starting the backend:
 
 ```bash
@@ -410,6 +442,7 @@ curl http://localhost:8000/docs
 ```
 
 Some tests and dashboards depend on generated data, reports, model files, or indexes. If those assets are missing, run the relevant preparation script first and treat fallback responses as expected behavior where documented above.
+<<<<<<< HEAD
 =======
 ## API areas
 
@@ -428,6 +461,8 @@ Some tests and dashboards depend on generated data, reports, model files, or ind
 - Acoustic speech-to-text is not integrated. `/api/audio/transcribe` can use an eligible `.txt` transcript sidecar under the data directory; without one it returns HTTP 503.
 - Semantic search and BDA require generated or separately obtained index and Parquet assets.
 - Evaluation displays and sample dataset figures may include demo values; verify underlying inputs before treating them as benchmark results.
+=======
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 
 ## Documentation
 
@@ -444,4 +479,7 @@ Some tests and dashboards depend on generated data, reports, model files, or ind
 - Keep secrets out of source control.
 - Add or update a focused test when changing backend behavior.
 - Validate both `python -m pytest` and `npm run build` before opening a pull request.
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a5dfa9f (frontend, readme.md and backend updates)
