@@ -1,330 +1,274 @@
 # BALLRIQ
 
-BALLRIQ is a multilingual cricket intelligence workbench. It combines match exploration, commentary preprocessing, cricket event and entity extraction, information retrieval, grounded question answering, evaluation reports, and analytical queries in one React + FastAPI application.
+**A multilingual cricket intelligence and retrieval platform**
 
-The project is designed for English, Hindi, Marathi, and selected code-mixed cricket commentary. It is useful for inspecting the full path from raw commentary to searchable documents, model predictions, evidence-backed answers, and aggregate cricket analytics.
+BALLRIQ brings cricket match data, multilingual commentary processing,
+search, question answering, and analytics into one application. Built
+with **React** and **FastAPI**, it is designed to help developers and
+researchers explore how raw cricket commentary can be transformed into
+structured events, searchable documents, evidence-backed answers, and
+match-level insights.
 
-## What the application provides
+The project supports **English, Hindi, Marathi, and selected code-mixed
+commentary**.
 
-- **Match Center** — Browse matches, innings, scorecards, players, statistics, commentary, and extracted event counts.
-- **Dataset** — Inspect dataset-oriented views and commentary records.
-- **Preprocessing** — Run and inspect the multilingual preprocessing pipeline step by step.
-- **NLP** — Classify cricket events and extract cricket entities and events.
-- **BDA** — Query Parquet-backed lakehouse data with DuckDB, view phase analytics and leaderboards, and inspect simulated streaming metrics.
-- **IR** — Search commentary with TF-IDF, BM25, semantic, or hybrid retrieval; compare methods and evaluate results.
-- **Evaluation Dashboard** — View dataset, preprocessing, NLP, and IR reports when generated reports are available.
-- **Grounded RAG** — Retrieve commentary evidence first, then answer questions from that evidence with citations. An optional OpenAI-compatible provider can generate the answer; otherwise a deterministic evidence synthesis is returned.
-- **Audio analysis** — Analyze an explicitly supplied transcript. Acoustic speech-to-text is not installed by default.
-<<<<<<< HEAD
-=======
-BALLRIQ is a developer-oriented demo for exploring multilingual cricket commentary. It combines text preprocessing, event and entity extraction, information retrieval, retrieval-backed question answering, match data, and analytics in one React and FastAPI application. Hindi, Marathi, English, and selected code-mixed commentary are in scope.
+## Features
 
-## What it does
+-   **Match Center:** Explore matches, innings, scorecards, players,
+    statistics, commentary, and extracted event counts.
+-   **Dataset Explorer:** Inspect available dataset records and
+    commentary.
+-   **Preprocessing:** Follow the multilingual text-processing pipeline,
+    including Unicode normalization, language detection, cricket-term
+    and player-name normalization, and tokenization.
+-   **NLP:** Classify cricket events and extract cricket entities and
+    events. A trained classifier is used when compatible model files are
+    available; otherwise, the application falls back to rule-based
+    processing.
+-   **Information Retrieval (IR):** Search commentary using TF-IDF,
+    BM25, semantic, or hybrid retrieval, depending on which index assets
+    are available.
+-   **Grounded question answering (RAG):** Retrieve relevant commentary
+    before answering and return supporting source references. If no LLM
+    provider is configured, BALLRIQ uses deterministic evidence
+    synthesis.
+-   **Big Data Analytics (BDA):** Query Parquet-based analytical data
+    with DuckDB, explore phase analytics and leaderboards, and inspect
+    simulated streaming metrics.
+-   **Evaluation Dashboard:** View dataset, preprocessing, NLP, and IR
+    reports when generated reports are available.
+-   **Transcript analysis:** Analyze a supplied transcript. Acoustic
+    speech-to-text is not installed by default.
 
-- **Explore matches:** Browse match, innings, player, scorecard, and commentary data.
-- **Process commentary:** Normalize Unicode and text, detect language, normalize cricket terminology and player names, and tokenize text.
-- **Analyze language:** Extract cricket events and entities; use an available trained classifier where configured, with a rule-based fallback.
-- **Search commentary:** Compare lexical TF-IDF and BM25 retrieval with semantic and hybrid retrieval when their data and index assets are available.
-- **Ask questions:** Retrieve relevant commentary and return evidence-linked answers. A deterministic response fallback is used unless an LLM provider is configured.
-- **Analyze data:** Query match and ball-event aggregates from Parquet using DuckDB. The streaming analytics endpoint simulates event flow from stored data; it is not a live feed.
+> **Project status:** BALLRIQ is a developer-oriented demo. Some
+> features depend on datasets, generated reports, trained models,
+> semantic indexes, or Parquet files that may not be included in a fresh
+> clone. The streaming analytics view simulates event flow from stored
+> data; it is not a live cricket feed.
 
 ## How it works
 
-1. The React/Vite frontend sends requests to the FastAPI backend.
-2. The backend routes requests to focused NLP, IR, RAG, match, evaluation, audio, and BDA modules.
-3. NLP preprocessing prepares commentary for classification, extraction, and retrieval.
-4. IR searches prepared documents using lexical, semantic, or hybrid strategies, depending on available index assets.
-5. RAG uses hybrid retrieval and returns source references with its answer; semantic index is required for RAG and method comparison.
-6. Match records are stored in SQLite; analytical queries use generated Parquet files through DuckDB.
-=======
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
+1.  The React/Vite frontend sends API requests to the FastAPI backend.
+2.  FastAPI routes requests to the match, NLP, IR, RAG, evaluation,
+    audio, and BDA modules.
+3.  The NLP pipeline prepares commentary for classification,
+    entity/event extraction, and retrieval.
+4.  The retrieval layer searches prepared documents with lexical,
+    semantic, or hybrid methods, depending on the available assets.
+5.  The RAG module retrieves relevant commentary and uses that evidence
+    to produce an answer with source references.
+6.  Match data is stored in SQLite, while analytical queries run against
+    generated Parquet files through DuckDB.
 
-## Architecture
+## System architecture
 
-```text
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
-┌──────────────────────┐       /api/*        ┌─────────────────────────┐
-│ React 19 + Vite UI   │ ──────────────────> │ FastAPI application      │
-│ frontend/src/        │                     │ backend/app/             │
-└──────────────────────┘                     └───────────┬─────────────┘
-                                                         │
-                 ┌───────────────────────────────────────┼────────────────────┐
-                 │                                       │                    │
-           SQLite database                         IR indexes          Parquet lake
-           data/ballriq.db                         models/ir/           data/lake/
-                 │                                       │                    │
-           Match/commentary                      TF-IDF, BM25,       DuckDB OLAP and
-           and audio metadata                    semantic, hybrid   stream simulation
+``` text
+┌──────────────────────────┐       /api/*       ┌──────────────────────────┐
+│ React 19 + Vite frontend │ ─────────────────> │ FastAPI backend          │
+│ frontend/src/            │                    │ backend/app/             │
+└──────────────────────────┘                    └────────────┬─────────────┘
+                                                             │
+                         ┌───────────────────────────────────┼────────────────────┐
+                         │                                   │                    │
+                  ┌──────▼──────┐                     ┌──────▼──────┐     ┌───────▼──────┐
+                  │ SQLite      │                     │ IR indexes  │     │ Parquet lake │
+                  │ data/       │                     │ models/ir/  │     │ data/lake/   │
+                  │ ballriq.db  │                     │              │     │ DuckDB       │
+                  └─────────────┘                     └─────────────┘     └──────────────┘
+                  Match and commentary                TF-IDF, BM25,       Analytics and
+                  records and audio metadata          semantic, hybrid    stream simulation
 ```
 
-### Backend modules
+## Repository structure
 
-- `backend/app/api/` — FastAPI routers and request/response handling.
-- `backend/app/db/` — SQLAlchemy models, async database access, and the destructive local seed command.
-- `backend/app/nlp/` — preprocessing, language detection, normalization, tokenization, event extraction, entity extraction, and classifiers.
-- `backend/app/ir/` — document loading, TF-IDF, BM25, semantic, hybrid retrieval, and retrieval metrics.
-- `backend/app/rag/` — evidence-first multilingual question answering.
-- `backend/app/bda/` — DuckDB lakehouse analytics and simulated streaming metrics.
-- `backend/app/audio/` — metadata and transcript analysis services.
-- `backend/app/core/` — environment-backed application settings.
-
-### Frontend modules
-
-`frontend/src/App.jsx` maps the navigation tabs to these pages:
-
-| Tab | Component | Main purpose |
-| --- | --- | --- |
-| Matches | `MatchCenter.jsx` | Match and commentary exploration |
-| News | `DatasetExplorer.jsx` | Dataset inspection |
-| Teams | `PreprocessingExplorer.jsx` | Preprocessing pipeline |
-| Players | `NLPExplorer.jsx` | NLP classification and extraction |
-| Leagues | `BDAExplorer.jsx` | Lakehouse and aggregate analytics |
-| Stats | `IRExplorer.jsx` | Search and retrieval evaluation |
-| More | `EvaluationDashboard.jsx` | Evaluation summaries |
-
-The tab labels are product-oriented and do not exactly match the internal page filenames.
-
-## Repository layout
-
-```text
-backend/
-  app/
-    api/                  FastAPI routers
-    audio/                Transcript/audio services
-    bda/                  DuckDB analytics and stream simulation
-    core/                 Settings and dependencies
-    db/                   Database models, access, and seeding
-    ir/                   Retrieval implementations and metrics
-    nlp/                  NLP pipeline, extraction, and models
-    rag/                  Grounded question-answering engine
-  tests/                  Pytest tests
-frontend/
-  src/
-    components/           Shared React components
-    pages/                Product views
-scripts/                  Dataset, preprocessing, index, training, and evaluation jobs
-data/
-  raw/                    Source CSV and JSONL files
-  interim/                Cleaned, normalized, and language-labelled data
-  processed/              Train/validation/test data and IR documents
-  annotations/            Event labels
-  lake/                   Generated Parquet tables
-models/                   Optional trained NLP models and IR indexes
-reports/                  Generated data-quality, NLP, and IR reports
-docs/                     Architecture, methodology, dataset, and annotation docs
-requirements.txt          Python dependencies
-frontend/package.json     JavaScript dependencies and Vite commands
-<<<<<<< HEAD
-=======
-backend/app/       FastAPI routes and NLP, IR, RAG, database, BDA modules
-backend/tests/     Backend tests
-frontend/src/      React/Vite user interface
-scripts/           Data preparation, index/model building, evaluation
-data/              Raw inputs and generated local data
-models/            Optional trained models and retrieval indexes
-docs/              Architecture, methodology, and dataset documentation
->>>>>>> ef74100db53296feb09a213ac4fcb0a2d664dcbc
-=======
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
+``` text
+BALLRIQ/
+├── backend/
+│   ├── app/
+│   │   ├── api/              # FastAPI routes and request/response handling
+│   │   ├── audio/            # Transcript and audio-related services
+│   │   ├── bda/              # DuckDB analytics and stream simulation
+│   │   ├── core/             # Configuration and dependencies
+│   │   ├── db/               # Database models, access, and seeding
+│   │   ├── ir/               # Retrieval methods and evaluation metrics
+│   │   ├── nlp/              # Preprocessing, extraction, and classifiers
+│   │   └── rag/              # Evidence-first question answering
+│   └── tests/                # Backend tests
+├── frontend/
+│   └── src/
+│       ├── components/       # Shared React components
+│       └── pages/            # Main application views
+├── scripts/                  # Data preparation, indexing, training, and evaluation
+├── data/
+│   ├── raw/                  # Source CSV and JSONL files
+│   ├── interim/              # Cleaned and normalized data
+│   ├── processed/            # Prepared datasets and IR documents
+│   ├── annotations/          # Event labels
+│   └── lake/                 # Generated Parquet tables
+├── models/                   # Optional trained models and retrieval indexes
+├── reports/                  # Generated data-quality, NLP, and IR reports
+├── docs/                     # Architecture, methodology, dataset, and annotation docs
+├── requirements.txt          # Python dependencies
+└── README.md
 ```
 
-## Prerequisites
+Some directories or generated assets may not exist until the relevant
+preparation scripts have been run.
 
-- Python 3.10+ with a virtual environment.
-- Node.js and npm compatible with the Vite version in `frontend/package.json`.
-- Source data under `data/raw/` if rebuilding the database or generated assets.
-- Optional: model and index artifacts for semantic search and trained NLP inference.
+## Technology stack
 
-Large datasets, model checkpoints, indexes, and generated lake files may be absent in a fresh clone or may be managed separately. Confirm redistribution rights before publishing or sharing them.
+-   **Frontend:** React 19, Vite
+-   **Backend:** Python, FastAPI
+-   **Database:** SQLite with SQLAlchemy and asynchronous database
+    access
+-   **Information retrieval:** TF-IDF, BM25, semantic retrieval, and
+    hybrid retrieval
+-   **Analytics:** DuckDB and Parquet
+-   **NLP:** Multilingual preprocessing, event classification, entity
+    extraction, and rule-based fallback
+-   **Question answering:** Retrieval-augmented generation (RAG), with
+    optional OpenAI-compatible text generation
+-   **Testing:** Pytest and the frontend production build
+
+## Requirements
+
+Before running BALLRIQ, install:
+
+-   Python 3.10 or newer, compatible with the packages in
+    `requirements.txt`
+-   Node.js and npm compatible with the Vite version in
+    `frontend/package.json`
+-   The source data required for database seeding and any assets needed
+    by the features you want to use
+
+Semantic search, hybrid retrieval, RAG, trained NLP inference, and BDA
+analytics may require additional model/index files or generated data.
+These may need to be obtained or created separately.
 
 ## Run locally
 
-Run commands from the repository root.
+Run the backend commands from the repository root. The frontend runs in
+a separate terminal.
 
-### 1. Install backend dependencies
+### 1. Create a Python environment and install dependencies
 
-PowerShell:
-<<<<<<< HEAD
-=======
-- Python with versions supported by dependencies in `requirements.txt`
-- Node.js and npm compatible with the Vite version in `frontend/package.json`
-- Raw dataset files for database seeding and document/index generation
+**Windows PowerShell**
 
-The repository may not include the data, trained models, semantic indexes, or Parquet outputs required by every feature. Obtain or generate those assets separately. Confirm data and model redistribution rights before sharing them.
-
-## Run locally
-
-Run commands from the repository root unless noted. On Windows PowerShell:
-
-### 1. Install Python dependencies and seed local database
-=======
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
-
-```powershell
+``` powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 ```
 
-macOS/Linux:
+**macOS/Linux**
 
-```bash
+``` bash
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-### 2. Prepare the local database
+### 2. Check that the raw data is present
 
-```bash
+The database seeder expects these files:
+
+``` text
+data/raw/matches/matches.csv
+data/raw/matches/players.csv
+data/raw/matches/innings.csv
+data/raw/matches/batting_stats.csv
+data/raw/matches/bowling_stats.csv
+data/raw/player_data/player_profiles.csv
+data/raw/commentary/commentary.jsonl
+data/raw/audio/audio_metadata.jsonl
+```
+
+If these files are not present, obtain or prepare the required source
+data before running the seeder.
+
+### 3. Seed the local database
+
+From the repository root, run:
+
+``` bash
 python -m backend.app.db.seed
 ```
 
-The seeder reads:
+**Important:** The seeder drops and recreates the local database tables
+before loading the data. Back up any local database changes you need
+before running it.
 
-- `data/raw/matches/matches.csv`
-- `data/raw/matches/players.csv`
-- `data/raw/matches/innings.csv`
-- `data/raw/matches/batting_stats.csv`
-- `data/raw/matches/bowling_stats.csv`
-- `data/raw/player_data/player_profiles.csv`
-- `data/raw/commentary/commentary.jsonl`
-- `data/raw/audio/audio_metadata.jsonl`
+The database is created at `data/ballriq.db` by default, subject to your
+configuration.
 
-It recreates tables in `data/ballriq.db` before loading data. Back up any local database changes before running it again.
+### 4. Start the backend API
 
-### 3. Start the API
+From the repository root:
 
-```bash
+``` bash
 python -m uvicorn backend.app.main:app --reload
 ```
 
-- API root: `http://localhost:8000/`
-- Swagger UI: `http://localhost:8000/docs`
-- OpenAPI JSON: `http://localhost:8000/openapi.json`
+The API should be available at:
 
-### 4. Start the frontend
+-   API root: `http://localhost:8000/`
+-   Interactive API documentation: `http://localhost:8000/docs`
+-   OpenAPI schema: `http://localhost:8000/openapi.json`
 
-In a second terminal:
-=======
-> **Warning:** Seeding drops and recreates the local database tables before loading data. Back up any local database contents you need before running it again.
-
-The seeder expects raw files under `data/raw/`, including match CSV files, `commentary/commentary.jsonl`, and `audio/audio_metadata.jsonl`.
-
-### 2. Start the backend
-
-In the same terminal, from repository root:
-
-<<<<<<< HEAD
-```powershell
-python -m uvicorn backend.app.main:app --reload
-```
-
-Backend: `http://localhost:8000`  
-Interactive API docs: `http://localhost:8000/docs`
-
-### 3. Start the frontend
+### 5. Install frontend dependencies and start the UI
 
 Open a second terminal:
 
-=======
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
-```bash
+``` bash
 cd frontend
 npm ci
 npm run dev
 ```
 
-Open the Vite URL, normally `http://localhost:5173`. Vite proxies `/api` requests to `http://127.0.0.1:8000` as configured in `frontend/vite.config.js`.
-<<<<<<< HEAD
-=======
-Open the Vite URL shown in the terminal, usually `http://localhost:5173`.
->>>>>>> ef74100db53296feb09a213ac4fcb0a2d664dcbc
-=======
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
+Open the local URL printed by Vite, usually `http://localhost:5173`. The
+frontend's Vite configuration proxies `/api` requests to
+`http://127.0.0.1:8000`.
 
-Production frontend build:
+### 6. Build the frontend for production
 
-```bash
-cd frontend
+From the `frontend/` directory:
+
+``` bash
 npm run build
 npm run preview
 ```
 
-## Data and model pipeline
-<<<<<<< HEAD
-=======
-## Data and model preparation
+## Prepare datasets, indexes, and analytics assets
 
-The database seeder loads match, player, innings, statistics, commentary, and audio metadata from `data/raw/` into `data/ballriq.db`.
+These steps are optional and depend on the features you want to use. Run
+the commands from the repository root.
 
-To prepare IR data and indexes when raw source data is available, run from the repository root:
+### Build information-retrieval documents and indexes
 
-```powershell
+``` bash
 python scripts/build_ir_documents.py
 python scripts/build_ir_indices.py
 ```
 
-TF-IDF and BM25 search can run without a semantic index. Semantic search, hybrid search, the method-comparison endpoint, and RAG require a compatible semantic index. BDA endpoints require Parquet assets under `data/lake/`; `scripts/bda_generate_lake.py` builds the local lake from prepared data. Learned NLP classification requires compatible model artifacts; otherwise, a fallback is used.
-
-## Configuration
-
-Application settings are defined in `backend/app/core/config.py` and may be overridden through a local `.env` file. Main settings include `DATABASE_URL`, `MODEL_DIR`, `DATA_DIR`, `HOST`, and `PORT`. Do not commit secrets.
-
-For LLM-backed RAG, the engine reads `OPENAI_API_KEY`, `OPENAI_MODEL`, and optionally `OPENAI_BASE_URL`. Without a configured provider, the application uses its deterministic answer fallback.
-
-## Tests and frontend build
-
-From the repository root:
-
-=======
-
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
-The intended data flow is:
-
-```text
-raw CSV/JSONL
-    │
-    ├─ python -m backend.app.db.seed ──> SQLite match database
-    │
-    ├─ preprocessing scripts ──────────> data/interim/
-    │
-    ├─ scripts/build_ir_documents.py ──> data/processed/ir/documents.jsonl
-    │
-    ├─ scripts/build_ir_indices.py ────> models/ir/
-    │
-    ├─ scripts/bda_generate_lake.py ───> data/lake/*.parquet
-    │
-    └─ training/evaluation scripts ────> models/ and reports/
-```
-
-### Build IR documents and indexes
-
-```bash
-python scripts/build_ir_documents.py
-python scripts/build_ir_indices.py
-```
-
-TF-IDF and BM25 use the document corpus. Semantic and hybrid search require a compatible semantic index under `models/ir/`. The IR router loads retrievers lazily on first request and returns HTTP 503 for semantic methods when the semantic index is unavailable or stale.
+TF-IDF and BM25 can work with the prepared document corpus. Semantic
+search, hybrid search, method comparison, and RAG require a compatible
+semantic index under `models/ir/`. If the required semantic index is
+missing or stale, semantic endpoints may return HTTP 503.
 
 ### Build the analytics lake
 
-```bash
+``` bash
 python scripts/bda_generate_lake.py
 ```
 
-BDA endpoints expect Parquet assets under `data/lake/`, including match, commentary, player, batting, bowling, and ball-event tables.
+BDA endpoints expect Parquet assets under `data/lake/`, including match,
+commentary, player, batting, bowling, and ball-event tables.
 
-### NLP model behavior
-
-The NLP router prefers a compatible XLM-R artifact under `models/nlp/event_classifier_xlmr/`. If unavailable, it tries the baseline artifact under `models/nlp/event_classifier_baseline/`. If no usable classifier is available, event classification falls back to the preprocessing and rule-based pipeline.
+### Train or evaluate NLP models
 
 Useful scripts include:
 
-```bash
+``` bash
 python scripts/train_nlp_baseline.py
 python scripts/train_xlmr.py
 python scripts/validate_dataset.py
@@ -333,13 +277,24 @@ python scripts/evaluate_ir.py
 python scripts/generate_ground_truth_qrels.py
 ```
 
-Check each script's source for required input files and options before running it.
+Check each script's source for required input files and supported
+options before running it.
+
+The NLP router looks for a compatible XLM-R event-classifier artifact
+under `models/nlp/event_classifier_xlmr/`. If it is unavailable, the
+router tries the baseline artifact under
+`models/nlp/event_classifier_baseline/`. If neither model is usable,
+event classification falls back to the preprocessing and rule-based
+pipeline.
 
 ## Configuration
 
-Settings live in `backend/app/core/config.py` and can be overridden through a root `.env` file. Important settings:
+Application settings are defined in `backend/app/core/config.py` and can
+be overridden through a root-level `.env` file.
 
-```dotenv
+Common settings include:
+
+``` dotenv
 DATABASE_URL=sqlite+aiosqlite:///D:/path/to/data/ballriq.db
 MODEL_DIR=./models
 DATA_DIR=./data
@@ -347,139 +302,181 @@ HOST=0.0.0.0
 PORT=8000
 ```
 
-For optional OpenAI-compatible RAG generation:
+Use a database path appropriate for your operating system. Do not commit
+secrets or local environment files to source control.
 
-```dotenv
+### Optional LLM-backed RAG
+
+To enable an OpenAI-compatible generation provider, configure:
+
+``` dotenv
 OPENAI_API_KEY=your-key
 OPENAI_MODEL=your-model
 OPENAI_BASE_URL=https://api.openai.com/v1
 ```
 
-The provider is used only when both `OPENAI_API_KEY` and `OPENAI_MODEL` are set. Without them, RAG uses deterministic evidence synthesis. Never commit `.env` files or API keys.
+The provider is used only when both `OPENAI_API_KEY` and `OPENAI_MODEL`
+are set. Without them, the application uses deterministic evidence
+synthesis. Keep API keys private and never commit them.
 
-## API reference
+## API overview
 
-FastAPI generates the complete interactive reference at `/docs`. Main route groups:
+FastAPI generates the full interactive API reference at
+`http://localhost:8000/docs`.
 
-| Prefix | Endpoints provide |
-| --- | --- |
-| `/api/matches` | Match list/detail, innings, commentary filters, event counts, statistics, players |
-| `/api/nlp` | `/preprocess`, `/classify`, `/entities`, pipeline metadata |
-| `/api/ir` | Search, method comparison, method list, evaluation, document statistics |
-| `/api/rag` | `/ask` grounded answers and suggested questions |
-| `/api/bda` | Lake summary, phase analytics, multilingual metrics, top batters/bowlers, read-only SQL, simulated stream metrics |
-| `/api/evaluation` | Dataset, preprocessing, NLP, IR, and combined evaluation summaries |
-| `/api/audio` | Metadata, supplied-transcript analysis, transcription capability status |
+  -----------------------------------------------------------------------
+  Route prefix                        Purpose
+  ----------------------------------- -----------------------------------
+  `/api/matches`                      Match lists and details, innings,
+                                      commentary filters, event counts,
+                                      statistics, and players
 
-Example requests:
+  `/api/nlp`                          Preprocessing, classification,
+                                      entity extraction, and pipeline
+                                      metadata
 
-```bash
+  `/api/ir`                           Search, retrieval-method
+                                      comparison, evaluation, and
+                                      document statistics
+
+  `/api/rag`                          Evidence-grounded answers and
+                                      suggested questions
+
+  `/api/bda`                          Parquet analytics, leaderboards,
+                                      read-only analytical SQL, and
+                                      simulated stream metrics
+
+  `/api/evaluation`                   Dataset, preprocessing, NLP, IR,
+                                      and combined evaluation summaries
+
+  `/api/audio`                        Audio metadata, supplied-transcript
+                                      analysis, and transcription
+                                      capability status
+  -----------------------------------------------------------------------
+
+### Example requests
+
+Fetch the matches endpoint:
+
+``` bash
 curl http://localhost:8000/api/matches/
+```
 
+Preprocess a short multilingual commentary sample:
+
+``` bash
 curl -X POST http://localhost:8000/api/nlp/preprocess \
   -H "Content-Type: application/json" \
   -d '{"text":"Kohli ने चौका लगाया"}'
+```
 
+Search commentary with BM25:
+
+``` bash
 curl -X POST http://localhost:8000/api/ir/search \
   -H "Content-Type: application/json" \
   -d '{"query":"powerplay wicket","method":"bm25","top_k":5}'
+```
 
+Ask a question using RAG:
+
+``` bash
 curl -X POST http://localhost:8000/api/rag/ask \
   -H "Content-Type: application/json" \
   -d '{"question":"Who was the top scorer?","language":"en"}'
 ```
 
-### RAG grounding contract
+## Important behavior and limitations
 
-`/api/rag/ask` retrieves commentary through the hybrid retriever before generation. Responses include `answer`, `confidence`, `is_grounded`, `generation`, `citations`, `sources`, and `retrieved_context_count`. If no result meets the evidence threshold, the engine returns an insufficient-evidence response instead of inventing an answer.
+### Grounded question answering
 
-### Audio limitation
+The `/api/rag/ask` endpoint retrieves commentary through the hybrid
+retriever before generating an answer. Responses include fields such as
+`answer`, `confidence`, `is_grounded`, `generation`, `citations`,
+`sources`, and `retrieved_context_count`.
 
-`/api/audio/analyze` accepts a transcript and runs existing NLP processing. `/api/audio/transcribe` reports HTTP 503 unless a transcription provider is configured; the repository does not ship an acoustic speech-to-text model by default.
+When the retrieved evidence does not meet the required threshold, the
+system is designed to return an insufficient-evidence response rather
+than invent an answer. RAG requires the appropriate retrieval assets and
+configuration.
 
-### BDA SQL limitation
+### Audio and transcription
 
-`/api/bda/query` is intended for read-only analytical SQL over the Parquet lake. Only send trusted queries when developing locally, and do not expose this endpoint publicly without adding authentication and query restrictions.
+The `/api/audio/analyze` endpoint accepts a supplied transcript and runs
+the available NLP processing. Acoustic speech-to-text is not installed
+by default. The `/api/audio/transcribe` endpoint may return HTTP 503
+when no eligible transcription provider or supported transcript sidecar
+is available.
+
+### Big Data Analytics
+
+The `/api/bda/query` endpoint is intended for read-only analytical SQL
+over the Parquet lake. Use trusted queries during local development. Do
+not expose this endpoint publicly without adding authentication and
+appropriate query restrictions.
+
+### Demo data and generated assets
+
+Some tests, dashboards, and sample figures depend on generated data,
+reports, trained models, indexes, or Parquet outputs. Some displayed
+sample figures may be demo values; check the underlying inputs before
+presenting them as benchmark results.
 
 ## Tests and verification
 
 Run backend tests from the repository root:
 
-```bash
+``` bash
 python -m pytest
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Build the frontend:
 
-```bash
+``` bash
 cd frontend
-=======
-Build the frontend from `frontend/`:
-
-```powershell
->>>>>>> ef74100db53296feb09a213ac4fcb0a2d664dcbc
-=======
-Build the frontend:
-
-```bash
-cd frontend
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
 npm ci
 npm run build
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
-For a focused API smoke check after starting the backend:
+For a quick backend smoke check, start the API and run:
 
-```bash
+``` bash
 curl http://localhost:8000/
 curl http://localhost:8000/docs
 ```
 
-Some tests and dashboards depend on generated data, reports, model files, or indexes. If those assets are missing, run the relevant preparation script first and treat fallback responses as expected behavior where documented above.
-<<<<<<< HEAD
-=======
-## API areas
-
-| Prefix | Purpose |
-| --- | --- |
-| `/api/matches` | Match, innings, commentary, player, and statistics endpoints |
-| `/api/nlp` | Preprocessing, classification, entity extraction, pipeline steps |
-| `/api/ir` | Search, method comparison, evaluation, document statistics |
-| `/api/rag` | Evidence-backed question answering and suggested questions |
-| `/api/bda` | Parquet analytics, leaderboards, and SQL exploration |
-| `/api/evaluation` | Dataset and NLP/IR evaluation summaries |
-| `/api/audio` | Audio metadata and transcript analysis endpoints |
-
-## Limitations
-
-- Acoustic speech-to-text is not integrated. `/api/audio/transcribe` can use an eligible `.txt` transcript sidecar under the data directory; without one it returns HTTP 503.
-- Semantic search and BDA require generated or separately obtained index and Parquet assets.
-- Evaluation displays and sample dataset figures may include demo values; verify underlying inputs before treating them as benchmark results.
-=======
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
+If tests or dashboard pages depend on missing generated assets, run the
+relevant preparation script first. Where documented, fallback behavior
+may be expected when an optional model or index is unavailable.
 
 ## Documentation
 
-- [System architecture](docs/architecture/system_architecture.md)
-- [NLP methodology](docs/nlp/nlp_methodology.md)
-- [IR methodology](docs/ir/ir_methodology.md)
-- [Dataset documentation](docs/dataset/dataset_documentation.md)
-- [Annotation guidelines](docs/dataset/annotation_guidelines.md)
+Project documentation is available in the `docs/` directory:
 
-## Development notes
+-   [System architecture](docs/architecture/system_architecture.md)
+-   [NLP methodology](docs/nlp/nlp_methodology.md)
+-   [Information retrieval methodology](docs/ir/ir_methodology.md)
+-   [Dataset documentation](docs/dataset/dataset_documentation.md)
+-   [Annotation guidelines](docs/dataset/annotation_guidelines.md)
 
-- Keep API paths and response shapes documented in the router and schemas when changing them.
-- Prefer generated assets over committing machine-specific outputs unless the project explicitly needs them for reproducibility.
-- Keep secrets out of source control.
-- Add or update a focused test when changing backend behavior.
-- Validate both `python -m pytest` and `npm run build` before opening a pull request.
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a5dfa9f (frontend, readme.md and backend updates)
+## Contributing and development notes
+
+When making changes to BALLRIQ:
+
+-   Keep API paths and response formats in sync with the relevant
+    routers and schemas.
+-   Add or update focused tests when changing backend behavior.
+-   Run the backend tests and frontend production build before opening a
+    pull request.
+-   Prefer regenerating local datasets, indexes, and reports over
+    committing machine-specific outputs, unless they are needed for
+    reproducibility.
+-   Confirm redistribution rights before sharing datasets, model
+    checkpoints, indexes, or generated data.
+-   Never commit API keys, passwords, or other secrets.
+
+------------------------------------------------------------------------
+
+BALLRIQ is built to make multilingual cricket commentary easier to
+explore, search, and analyze---from raw text to evidence-backed answers
+and structured match insights.
